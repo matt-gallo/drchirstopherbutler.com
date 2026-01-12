@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claim Your FREE Health Assessment Deep Dive | Dr. Christopher Butler</title>
+    <meta name="description" content="Exclusive offer: Get your personalized 60-minute Health Assessment Deep Dive with Dr. Butler completely FREE. Only available on this page.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #070d0b;
+            --deep: #0f211a;
+            --green: #1f6b4f;
+            --mint: #c6f6d5;
+            --gold: #f0c15b;
+            --red: #e53e3e;
+            --text: #f4f6f5;
+            --muted: rgba(244, 246, 245, 0.65);
+            --card: rgba(12, 28, 22, 0.88);
+            --card-elevated: rgba(12, 28, 22, 0.92);
+            --border-glow: rgba(240, 193, 91, 0.22);
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --shadow: 0 24px 45px rgba(6, 12, 9, 0.35);
+            --shadow-lg: 0 34px 60px rgba(6, 12, 9, 0.45);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--deep);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            background-image:
+                radial-gradient(circle at 8% 12%, rgba(31, 107, 79, 0.35), transparent 55%),
+                radial-gradient(circle at 88% 18%, rgba(240, 193, 91, 0.18), transparent 60%),
+                radial-gradient(circle at 50% 90%, rgba(31, 107, 79, 0.22), transparent 65%),
+                linear-gradient(130deg, #030605 0%, #0b1913 60%, #020403 100%);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        .wrap {
+            width: min(1180px, 100% - 3.5rem);
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 3rem);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: clamp(2.75rem, 6vw, 5rem);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: clamp(1.35rem, 3vw, 1.75rem);
+            font-weight: 600;
+        }
+
+        /* Header */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem clamp(1.5rem, 5vw, 3rem);
+            background: rgba(7, 16, 12, 0.92);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(14px);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 85vh;
+            padding: clamp(5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 6% 4%;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 40px;
+            pointer-events: none;
+        }
+
+        .hero-layout {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: clamp(2rem, 4vw, 3.5rem);
+            align-items: center;
+        }
+
+        .hero-content {
+            text-align: left;
+        }
+
+        .exclusive-badge {
+            display: inline-block;
+            background: var(--gold);
+            color: var(--deep);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 24px rgba(240, 193, 91, 0.4);
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 .free {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--muted);
+            max-width: 550px;
+            margin-bottom: 2.5rem;
+        }
+
+        .value-callout {
+            background: rgba(240, 193, 91, 0.15);
+            border: 2px solid var(--gold);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 2rem;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .strikethrough {
+            font-size: 2rem;
+            text-decoration: line-through;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .free-price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            display: block;
+        }
+
+        .savings-text {
+            font-size: 1.1rem;
+            color: var(--mint);
+            margin-top: 0.75rem;
+        }
+
+        .hero-media {
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-photo {
+            background: linear-gradient(150deg, rgba(31, 107, 79, 0.5), rgba(10, 21, 17, 0.9));
+            border: 1px solid rgba(240, 193, 91, 0.35);
+            padding: 1.5rem;
+            border-radius: 32px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            max-width: 420px;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: auto;
+            border-radius: 22px;
+            filter: saturate(1.05) contrast(1.05);
+        }
+
+        .hero-caption {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+        }
+
+        /* Section */
+        section {
+            padding: clamp(4rem, 8vw, 6.5rem) 0;
+        }
+
+        .section-surface {
+            background: var(--card-elevated);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-glow);
+            box-shadow: var(--shadow-lg);
+            padding: clamp(2.5rem, 5vw, 3.5rem);
+            backdrop-filter: blur(8px);
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .visual-section {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+        }
+
+        .visual-card {
+            background: linear-gradient(145deg, rgba(31, 107, 79, 0.2), rgba(8, 17, 14, 0.95));
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(240, 193, 91, 0.2);
+            padding: clamp(1.75rem, 3vw, 2.5rem);
+            box-shadow: var(--shadow);
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .visual-card img {
+            width: 100%;
+            border-radius: var(--radius-md);
+            object-fit: cover;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        .visual-eyebrow {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            color: var(--mint);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+
+        .visual-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .visual-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.7rem;
+            color: var(--muted);
+        }
+
+        .visual-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            position: absolute;
+            left: 0;
+            top: 0.55rem;
+        }
+
+        .visual-quote {
+            font-style: italic;
+            color: var(--text);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 1rem;
+        }
+
+        .stat {
+            background: rgba(7, 16, 12, 0.6);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(240, 193, 91, 0.18);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .protocol-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .protocol-step {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            align-items: start;
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            background: rgba(7, 16, 12, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .protocol-num {
+            width: 42px;
+            height: 42px;
+            border-radius: 14px;
+            background: rgba(240, 193, 91, 0.18);
+            border: 1px solid rgba(240, 193, 91, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1rem;
+        }
+
+        .protocol-step h3 {
+            margin-bottom: 0.35rem;
+            color: var(--mint);
+        }
+
+        .protocol-step p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .proof-note {
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px dashed rgba(240, 193, 91, 0.5);
+            color: var(--text);
+            background: rgba(240, 193, 91, 0.08);
+            font-size: 0.95rem;
+        }
+
+        /* Why Free */
+        .why-free {
+            background: rgba(31, 107, 79, 0.12);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(31, 107, 79, 0.3);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .why-free h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .why-free p {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 1.05rem;
+            text-align: center;
+        }
+
+        /* What You Get */
+        .stack-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(31, 107, 79, 0.15);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            border: 1px solid rgba(31, 107, 79, 0.3);
+        }
+
+        .stack-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        .stack-item:last-child {
+            border-bottom: none;
+        }
+
+        .stack-value {
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        .total-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 1.5rem 0 1rem;
+            text-decoration: line-through;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .free-today {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .one-time {
+            font-size: 1.05rem;
+            color: var(--mint);
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Limited Time */
+        .limited-box {
+            background: rgba(229, 62, 62, 0.15);
+            border: 2px solid var(--red);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .limited-box h3 {
+            color: var(--red);
+            margin-bottom: 1rem;
+        }
+
+        .limited-box p {
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(31, 107, 79, 0.08);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(31, 107, 79, 0.2);
+        }
+
+        .step-num {
+            width: 60px;
+            height: 60px;
+            background: var(--green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            margin-bottom: 0.75rem;
+            color: var(--gold);
+        }
+
+        .step p {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* Calendar */
+        .calendar-container {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            background: var(--card);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--gold);
+            box-shadow: 0 0 40px rgba(240, 193, 91, 0.2);
+        }
+
+        .claim-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--gold) 0%, #d4a841 100%);
+            color: var(--deep);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            display: inline-block;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(7, 13, 11, 0.95);
+            color: var(--muted);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-layout,
+            .visual-section,
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-content {
+                text-align: center;
+            }
+
+            .hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-media {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <img src="https://storage.googleapis.com/msgsndr/ktMpb3KQagGXZ7P5tCjW/media/68f91a268658976de10480d7.png" alt="NeuroClarity" style="height: 44px;">
+    </header>
+
+    <section class="hero">
+        <div class="wrap">
+            <div class="hero-layout">
+                <div class="hero-content">
+                    <span class="exclusive-badge">🎁 Exclusive One-Time Offer</span>
+                    <h1>Claim Your <span class="free">FREE</span> Health Assessment Deep Dive</h1>
+                    <p>Because you just completed the Brain Health Assessment, you're eligible for a complimentary 60-minute deep dive with Dr. Butler—completely free.</p>
+                    <div class="value-callout">
+                        <span class="strikethrough">$195</span>
+                        <span class="free-price">FREE</span>
+                        <p class="savings-text">One-time exclusive offer • This page only</p>
+                    </div>
+                </div>
+                <div class="hero-media">
+                    <div class="hero-photo">
+                        <img src="chris-butler-portrait.png" alt="Dr. Chris Butler" loading="lazy">
+                        <p class="hero-caption">Dr. Chris Butler • Functional Neurospecialist & Formulator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="visual-section">
+                <div class="visual-card">
+                    <div class="visual-eyebrow">Meet Your Guide</div>
+                    <h2>30+ Years Restoring Cognitive Clarity</h2>
+                    <p>Dr. Butler has helped thousands reclaim their memory, focus, and mood by looking at how hormones, gut health, and inflammation work together. Your call goes far beyond supplements—it maps the exact levers your body needs.</p>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <span class="stat-number">3,000+</span>
+                            <span class="stat-label">Assessments Interpreted</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">60 min</span>
+                            <span class="stat-label">Dedicated Call Time</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">95%</span>
+                            <span class="stat-label">Report Faster Clarity</span>
+                        </div>
+                    </div>
+                    <ul class="visual-list">
+                        <li>Translates your assessment into an action plan you can follow immediately</li>
+                        <li>Shows you how to stack nutrition, lifestyle, and neurotech for faster clarity</li>
+                        <li>Answers questions you can't cover in a rushed doctor visit</li>
+                    </ul>
+                    <img src="chris-butler.png" alt="Dr. Butler coaching a client" loading="lazy">
+                    <p class="visual-quote">“Your brain runs your day. If you want better focus, we have to treat your whole system—not just throw pills at the symptoms.”</p>
+                </div>
+                <div class="visual-card">
+                    <div class="visual-eyebrow">Inside The Deep Dive</div>
+                    <h2>Your Brain Optimization Roadmap</h2>
+                    <p>We walk through the exact routine that will support better brain oxygenation, stress resilience, and neurotransmitter balance. Every recommendation is tied back to your assessment.</p>
+                    <div class="protocol-steps">
+                        <div class="protocol-step">
+                            <div class="protocol-num">01</div>
+                            <div>
+                                <h3>Precision Neuromap Review</h3>
+                                <p>Connect the dots between your inputs (sleep, gut, hormones) and the symptoms you’re feeling so nothing is left to guesswork.</p>
+                            </div>
+                        </div>
+                        <div class="protocol-step">
+                            <div class="protocol-num">02</div>
+                            <div>
+                                <h3>Customized 30-Day Protocol</h3>
+                                <p>Dial in nutrition, supplementation, and recovery tactics that calm inflammation and keep your brain fueled all day.</p>
+                            </div>
+                        </div>
+                        <div class="protocol-step">
+                            <div class="protocol-num">03</div>
+                            <div>
+                                <h3>Follow-Up Optimization</h3>
+                                <p>Use the 30-day accountability check-in to tune dosage, routines, and biofeedback markers for long-term results.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="proof-note">Every session is recorded and delivered with written notes so you can revisit the game plan without scrambling for details.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="why-free">
+                <h3>Why Is This Free?</h3>
+                <p>You just took the time to complete our comprehensive Brain Health Assessment. That tells us you're serious about fixing your brain fog, fatigue, and low energy. As a thank you—and because we want to see you succeed—we're offering you this deep dive consultation at no cost.</p>
+            </div>
+
+            <div class="section-surface">
+                <h2 class="section-title">What You'll Get (Normally $785)</h2>
+                <div class="stack-box">
+                    <div class="stack-item">
+                        <span>60-Minute Deep Dive Assessment</span>
+                        <span class="stack-value">$250</span>
+                    </div>
+                    <div class="stack-item">
+                        <span>Personalized 30-Day Action Plan</span>
+                        <span class="stack-value">$300</span>
+                    </div>
+                    <div class="stack-item">
+                        <span>30-Day Follow-Up Optimization Call</span>
+                        <span class="stack-value">$150</span>
+                    </div>
+                    <div class="stack-item">
+                        <span>Brain Health & Performance Review</span>
+                        <span class="stack-value">$85</span>
+                    </div>
+                </div>
+                <div class="total-value">Total Value: $785</div>
+                <div class="free-today">Today: FREE</div>
+                <p class="one-time">This offer is only available on this page, right now.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="limited-box">
+                <h3>⚠️ This Offer Expires When You Leave This Page</h3>
+                <p>This is a one-time courtesy offer exclusively for people who complete the Brain Health Assessment. If you leave this page, this offer disappears and the regular $195 price applies.</p>
+            </div>
+
+            <div class="section-surface">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <h3>Book Below</h3>
+                        <p>Choose a time that works for your 60-minute deep dive with Dr. Butler.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <h3>Get Your Plan</h3>
+                        <p>Walk away with a personalized 30-day protocol tailored to your brain and body.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <h3>Follow-Up Support</h3>
+                        <p>30 days later, we'll reconnect to optimize and refine your results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <h2 class="section-title">Claim Your FREE Session Now</h2>
+            <p class="section-intro">This is a no-brainer. Book your complimentary deep dive below before you leave this page.</p>
+            <div class="calendar-container">
+                <div class="claim-header">🎁 Claim Your Free 60-Minute Deep Dive</div>
+                <iframe src="https://api.leadconnectorhq.com/widget/booking/ry04yg3crGO8Ual9Wlgf" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="ry04yg3crGO8Ual9Wlgf_1763498870209"></iframe>
+                <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="wrap">
+            <p>&copy; 2025 NeuroClarity. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

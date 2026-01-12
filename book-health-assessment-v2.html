@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix Your Brain Fog, Fatigue & Low Energy in 30 Days | Dr. Christopher Butler</title>
+    <meta name="description" content="Finally get answers about your brain, energy, and performance. 60-minute deep dive with personalized 30-day plan. Only 8 spots available per month.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #070d0b;
+            --deep: #0f211a;
+            --green: #1f6b4f;
+            --mint: #c6f6d5;
+            --gold: #f0c15b;
+            --red: #e53e3e;
+            --text: #f4f6f5;
+            --muted: rgba(244, 246, 245, 0.65);
+            --card: rgba(12, 28, 22, 0.88);
+            --card-elevated: rgba(12, 28, 22, 0.92);
+            --border-glow: rgba(240, 193, 91, 0.22);
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --shadow: 0 24px 45px rgba(6, 12, 9, 0.35);
+            --shadow-lg: 0 34px 60px rgba(6, 12, 9, 0.45);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: var(--deep);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            background-image:
+                radial-gradient(circle at 8% 12%, rgba(31, 107, 79, 0.35), transparent 55%),
+                radial-gradient(circle at 88% 18%, rgba(240, 193, 91, 0.18), transparent 60%),
+                radial-gradient(circle at 50% 90%, rgba(31, 107, 79, 0.22), transparent 65%),
+                linear-gradient(130deg, #030605 0%, #0b1913 60%, #020403 100%);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        .wrap {
+            width: min(1180px, 100% - 3.5rem);
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 3rem);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        h1 {
+            font-size: clamp(2.75rem, 6vw, 4.5rem);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.25rem);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: clamp(1.35rem, 3vw, 1.75rem);
+            font-weight: 600;
+        }
+
+        /* Header */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            padding: 1rem clamp(1.5rem, 5vw, 3rem);
+            background: rgba(7, 16, 12, 0.92);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(14px);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav a {
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav a:hover {
+            color: var(--gold);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            background: linear-gradient(135deg, var(--green) 0%, #1a5940 100%);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 24px rgba(31, 107, 79, 0.4);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, var(--gold) 0%, #d4a841 100%);
+            color: var(--deep);
+        }
+
+        .btn-gold:hover {
+            box-shadow: 0 12px 24px rgba(240, 193, 91, 0.4);
+        }
+
+        /* Mobile Menu */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 80vh;
+            padding: clamp(5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 6% 4%;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 40px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .scarcity-badge {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            padding: 0.5rem 1.3rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Section */
+        section {
+            padding: clamp(4rem, 8vw, 6.5rem) 0;
+        }
+
+        .section-surface {
+            background: var(--card-elevated);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-glow);
+            box-shadow: var(--shadow-lg);
+            padding: clamp(2.5rem, 5vw, 3.5rem);
+            backdrop-filter: blur(8px);
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: clamp(2rem, 4vw, 3rem);
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        /* Pain Grid */
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .pain-item {
+            background: rgba(31, 107, 79, 0.1);
+            padding: 1.8rem;
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--red);
+        }
+
+        .pain-item h3 {
+            color: var(--gold);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .pain-item p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .pain-cta {
+            text-align: center;
+            margin-top: 2.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        /* Promise Grid */
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .promise-card {
+            background: rgba(31, 107, 79, 0.12);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(31, 107, 79, 0.25);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .promise-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-4px);
+        }
+
+        .promise-card h3 {
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .promise-card p {
+            color: var(--muted);
+        }
+
+        /* Fail Points */
+        .fail-point {
+            background: rgba(31, 107, 79, 0.08);
+            padding: 1.8rem;
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--green);
+            margin-bottom: 1.5rem;
+        }
+
+        .fail-point strong {
+            display: block;
+            color: var(--gold);
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .fail-point p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* Credibility */
+        .cred-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .cred-photo {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background: url('https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/691a0a31f939581f3d8b6f87.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(240, 193, 91, 0.2);
+        }
+
+        .cred-content h2 {
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .cred-content p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .testimonial {
+            background: rgba(31, 107, 79, 0.12);
+            padding: 1.8rem;
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--mint);
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-context {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .testimonial-result {
+            font-size: 0.85rem;
+            color: var(--mint);
+            font-weight: 600;
+            margin-top: 0.75rem;
+        }
+
+        /* Stack */
+        .stack {
+            background: linear-gradient(135deg, rgba(15, 33, 26, 0.95) 0%, rgba(7, 13, 11, 0.95) 100%);
+            border: 1px solid var(--border-glow);
+        }
+
+        .stack h2 {
+            color: var(--text);
+        }
+
+        .stack-subtitle {
+            font-size: 1.15rem;
+            margin-bottom: 2.5rem;
+            color: var(--muted);
+        }
+
+        .stack-box {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(31, 107, 79, 0.15);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            border: 1px solid rgba(31, 107, 79, 0.3);
+        }
+
+        .stack-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1.05rem;
+            color: var(--text);
+        }
+
+        .stack-item:last-child {
+            border-bottom: none;
+        }
+
+        .stack-value {
+            font-weight: 600;
+            color: var(--muted);
+        }
+
+        .total-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 1.5rem 0 1rem;
+            text-decoration: line-through;
+            color: var(--muted);
+            text-align: center;
+        }
+
+        .actual-price {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .savings {
+            font-size: 1.05rem;
+            color: var(--mint);
+            text-align: center;
+        }
+
+        /* Steps */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(31, 107, 79, 0.08);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(31, 107, 79, 0.2);
+        }
+
+        .step-num {
+            width: 60px;
+            height: 60px;
+            background: var(--green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 auto 1rem;
+        }
+
+        .step h3 {
+            margin-bottom: 0.75rem;
+            color: var(--gold);
+        }
+
+        .step p {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* Guarantee */
+        .guarantee-box {
+            background: rgba(31, 107, 79, 0.15);
+            border: 2px solid var(--mint);
+            border-radius: var(--radius-md);
+            padding: 2rem;
+            font-weight: 600;
+            color: var(--text);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        /* Not For You */
+        .not-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .not-item {
+            background: rgba(229, 62, 62, 0.1);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border-left: 3px solid var(--red);
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+        }
+
+        .not-icon {
+            color: var(--red);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .not-item p {
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* Calendar */
+        .calendar-container {
+            max-width: 800px;
+            margin: 2rem auto 0;
+            background: var(--card);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-glow);
+        }
+
+        .limited-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            background: var(--red);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(7, 13, 11, 0.95);
+            color: var(--muted);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 280px;
+                background: var(--deep);
+                flex-direction: column;
+                gap: 0;
+                padding: 5rem 2rem 2rem;
+                box-shadow: -4px 0 12px rgba(0,0,0,0.3);
+                transition: right 0.3s ease;
+                z-index: 1000;
+                border-left: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav.active {
+                right: 0;
+            }
+
+            .nav a {
+                padding: 1rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                width: 100%;
+            }
+
+            .cred-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cred-photo {
+                max-width: 300px;
+                margin: 0 auto 2rem;
+            }
+
+            .steps {
+                grid-template-columns: 1fr;
+            }
+
+            .pain-grid,
+            .promise-grid,
+            .testimonials-grid,
+            .not-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="logo">Dr. Christopher Butler</div>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
+        <nav class="nav" id="nav">
+            <a href="/">Home</a>
+            <a href="/wellpath-center.html">WellPath Center</a>
+            <a href="https://www.skool.com/the-freedom-group-8858/about" target="_blank">Community</a>
+            <a href="tel:9087211317" class="btn">Call: (908) 721-1317</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="wrap">
+            <div class="hero-content">
+                <span class="scarcity-badge">Only 8 Spots Available This Month</span>
+                <h1>Fix Your Brain Fog, Fatigue, and Low Energy in 30 Days</h1>
+                <p>Get a personalized plan designed for your body in one 60-minute deep dive with Dr. Butler.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">If You're Tired Of...</h2>
+                <div class="pain-grid">
+                    <div class="pain-item">
+                        <h3>Waking Up Exhausted</h3>
+                        <p>Even after a full night's sleep, you still feel drained and unrested.</p>
+                    </div>
+                    <div class="pain-item">
+                        <h3>Mental Fog</h3>
+                        <p>Unable to focus, forgetting things mid-sentence, losing your train of thought.</p>
+                    </div>
+                    <div class="pain-item">
+                        <h3>Caffeine Dependency</h3>
+                        <p>Relying on stimulants just to feel "normal" and get through the day.</p>
+                    </div>
+                    <div class="pain-item">
+                        <h3>Nothing Works</h3>
+                        <p>Tried supplements, diets, and wellness hacks that don't deliver real results.</p>
+                    </div>
+                    <div class="pain-item">
+                        <h3>No Real Answers</h3>
+                        <p>Feeling "off" but doctors can't tell you what's actually wrong.</p>
+                    </div>
+                    <div class="pain-item">
+                        <h3>Lost Agency</h3>
+                        <p>You've lost control over your energy, focus, and well-being.</p>
+                    </div>
+                </div>
+                <p class="pain-cta">This is your turning point.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">What You'll Get in 30 Days</h2>
+                <div class="promise-grid">
+                    <div class="promise-card">
+                        <h3>Crystal Clear Direction</h3>
+                        <p>No more guessing. You'll know exactly what's draining your energy and what to do about it.</p>
+                    </div>
+                    <div class="promise-card">
+                        <h3>Sustainable Energy</h3>
+                        <p>Wake up feeling rested. Think clearly. Function without relying on stimulants.</p>
+                    </div>
+                    <div class="promise-card">
+                        <h3>Personalized Roadmap</h3>
+                        <p>A clinician-designed 30-day plan tailored to your brain, body, and lifestyle.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">Why Traditional Approaches Don't Work</h2>
+                <div class="fail-point">
+                    <strong>Doctors don't have time.</strong>
+                    <p>Most appointments are 15 minutes. They treat symptoms, not root causes.</p>
+                </div>
+                <div class="fail-point">
+                    <strong>Generic advice doesn't work.</strong>
+                    <p>"Eat better. Sleep more. Reduce stress." Great—but how? And what's actually wrong?</p>
+                </div>
+                <div class="fail-point">
+                    <strong>The system isn't built for prevention.</strong>
+                    <p>Insurance models reward reactive care, not root-cause analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <div class="cred-grid">
+                    <div class="cred-photo"></div>
+                    <div class="cred-content">
+                        <h2>Meet Dr. Christopher Butler</h2>
+                        <p>Dr. Butler is a licensed acupuncturist and functional medicine practitioner specializing in brain health, energy optimization, and root-cause wellness.</p>
+                        <p>Unlike conventional practitioners who chase symptoms, Dr. Butler identifies the underlying patterns—sleep dysregulation, blood sugar instability, inflammation, stress response—that drain your energy and cloud your thinking.</p>
+                        <p>He's helped hundreds of high-performers reclaim their focus, energy, and mental clarity without relying on stimulants or Band-Aid solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">Real Results from Real People</h2>
+                <p class="section-intro">Dr. Butler's approach has helped entrepreneurs, professionals, and high-performers reclaim their mental clarity and energy.</p>
+                <div class="testimonials-grid">
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Post-concussion fog finally lifted. My brain feels strong again."</p>
+                        <div class="testimonial-author">Marjorie M.</div>
+                        <div class="testimonial-context">BC, Canada</div>
+                        <div class="testimonial-result">Stress resilience restored • Sleep normalized</div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"At 78 I'm selling my business with a clear mind again."</p>
+                        <div class="testimonial-author">Maria DeLorenzo</div>
+                        <div class="testimonial-context">Union, NJ</div>
+                        <div class="testimonial-result">Sharp recall • Daily confidence back</div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Bit by bit my mind cleared, energy steadied, and everyone noticed."</p>
+                        <div class="testimonial-author">Steve S.</div>
+                        <div class="testimonial-context">Business Owner</div>
+                        <div class="testimonial-result">Brain fog gone • Energy stable all day</div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Clarity that sticks. Focus without tension."</p>
+                        <div class="testimonial-author">Matt G.</div>
+                        <div class="testimonial-context">Entrepreneur</div>
+                        <div class="testimonial-result">Anxiety gone • Creative flow unlocked</div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Half the stimulants. Same focus. No crash."</p>
+                        <div class="testimonial-author">Araka O.</div>
+                        <div class="testimonial-context">Sales Professional</div>
+                        <div class="testimonial-result">12-hour days steady • 50% stimulant reduction</div>
+                    </div>
+                    <div class="testimonial">
+                        <p class="testimonial-quote">"Income spiked the same month I stopped redosing."</p>
+                        <div class="testimonial-author">Operations Lead</div>
+                        <div class="testimonial-context">Study Coordinator</div>
+                        <div class="testimonial-result">34% revenue increase • Zero afternoon slump</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="section-surface stack">
+                <h2 class="section-title">What You Get</h2>
+                <p class="stack-subtitle">This isn't just a consultation. It's a complete system.</p>
+                <div class="stack-box">
+                    <div class="stack-item">
+                        <span>60-Minute Deep Dive Assessment</span>
+                        <span class="stack-value">$250</span>
+                    </div>
+                    <div class="stack-item">
+                        <span>Personalized 30-Day Action Plan</span>
+                        <span class="stack-value">$300</span>
+                    </div>
+                    <div class="stack-item">
+                        <span>30-Day Follow-Up Optimization Call</span>
+                        <span class="stack-value">$150</span>
+                    </div>
+                    <div class="stack-item">
+                        <span>Brain Health & Performance Review</span>
+                        <span class="stack-value">$85</span>
+                    </div>
+                </div>
+                <div class="total-value">Total Value: $785</div>
+                <div class="actual-price">$195</div>
+                <p class="savings">Save $590 when you book today</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <h3>Book Your Session</h3>
+                        <p>Schedule your 60-minute deep dive at a time that works for you.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <h3>Get Your Plan</h3>
+                        <p>Receive a personalized 30-day protocol—clear, actionable, tailored to you.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <h3>Follow-Up Support</h3>
+                        <p>30 days later, we'll reconnect to optimize and refine your approach.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">You're Protected</h2>
+                <p class="section-intro">If Dr. Butler determines you're not a good fit for this assessment, you won't be charged.</p>
+                <div class="guarantee-box">
+                    If you don't walk away with clarity, direction, and a customized 30-day plan, we'll continue working with you until you do—at no extra charge.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">This Is NOT For You If...</h2>
+                <div class="not-grid">
+                    <div class="not-item">
+                        <span class="not-icon">⊘</span>
+                        <p>You want a quick fix without changing any habits</p>
+                    </div>
+                    <div class="not-item">
+                        <span class="not-icon">⊘</span>
+                        <p>You aren't willing to follow a personalized protocol</p>
+                    </div>
+                    <div class="not-item">
+                        <span class="not-icon">⊘</span>
+                        <p>You expect prescriptions-only solutions</p>
+                    </div>
+                    <div class="not-item">
+                        <span class="not-icon">⊘</span>
+                        <p>You're looking for someone to tell you what you want to hear instead of what you need to hear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <h2 class="section-title">Ready to Fix What's Draining Your Energy?</h2>
+            <p class="section-intro">Book your Health Assessment Deep Dive and get the personalized roadmap you've been searching for.</p>
+            <div class="calendar-container">
+                <div class="limited-header">⚠️ Only 8 Spots Available This Month — $195</div>
+                <iframe src="https://api.leadconnectorhq.com/widget/booking/ry04yg3crGO8Ual9Wlgf" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="ry04yg3crGO8Ual9Wlgf_1763498870209"></iframe>
+                <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="wrap">
+            <p>&copy; 2025 Dr. Christopher Butler. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.getElementById('mobileToggle');
+        const nav = document.getElementById('nav');
+
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

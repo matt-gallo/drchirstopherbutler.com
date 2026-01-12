@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Health Assessment Deep Dive | Dr. Christopher Butler</title>
+    <meta name="title" content="Health Assessment Deep Dive | Dr. Christopher Butler">
+    <meta name="description" content="60-minute comprehensive health assessment with Dr. Butler. Get crystal clear direction, a personalized 30-day plan, and follow-up support for $195.">
+    <meta name="keywords" content="health assessment, brain health evaluation, personalized health plan, Dr. Christopher Butler, functional medicine consultation">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://drchristopherbutler.com/book-health-assessment">
+    <meta property="og:title" content="Health Assessment Deep Dive | Dr. Christopher Butler">
+    <meta property="og:description" content="Get crystal clear direction on your health. 60-minute deep dive into your brain health, habits, lifestyle, and goals with personalized 30-day action plan.">
+    <meta property="og:image" content="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/691a0a31bd0a6c3c860b9ab2.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2C5F2D;
+    --primary-dark: #1a3d1b;
+    --primary-light: #3a7a3c;
+    --accent: #97BC62;
+    --accent-warm: #B8D89A;
+    --text-dark: #1a1a1a;
+    --text-medium: #4a4a4a;
+    --text-light: #6a6a6a;
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+    --bg-cream: #fafaf8;
+    --bg-tan: #e8f3e9;
+    --border: #e5e5e5;
+    --shadow: rgba(44, 95, 45, 0.12);
+
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 6rem;
+
+    --container-max: 1200px;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    line-height: 1.6;
+    font-size: 16px;
+    background-color: var(--bg-white);
+}
+
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+}
+
+h1 {
+    font-size: 3.5rem;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+h3 {
+    font-size: 1.65rem;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Header */
+.header {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border);
+    padding: var(--spacing-sm) 0;
+    box-shadow: 0 2px 8px var(--shadow);
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.back-link {
+    color: var(--text-medium);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--primary);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    padding: var(--spacing-xl) 0;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.95;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg);
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+.price-badge {
+    display: inline-block;
+    background-color: white;
+    color: var(--primary);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 50px;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.price-note {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* Value Section */
+.value {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-white);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-divider {
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent);
+    margin: var(--spacing-sm) auto var(--spacing-md);
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.value-card {
+    background-color: var(--bg-tan);
+    padding: var(--spacing-md);
+    border-radius: 12px;
+    border: 2px solid var(--accent);
+}
+
+.value-card h3 {
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.value-card p {
+    color: var(--text-medium);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* What's Included Section */
+.whats-included {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-light);
+}
+
+.included-list {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.included-list li {
+    padding: var(--spacing-md);
+    background-color: var(--bg-white);
+    border-radius: 8px;
+    margin-bottom: var(--spacing-sm);
+    border-left: 4px solid var(--accent);
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+.check-icon {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.included-list strong {
+    display: block;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+    font-size: 1.1rem;
+}
+
+/* Process Section */
+.process {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-white);
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.step {
+    text-align: center;
+    padding: var(--spacing-md);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto var(--spacing-sm);
+}
+
+.step h3 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.step p {
+    color: var(--text-medium);
+    margin: 0;
+}
+
+/* Who This Is For */
+.who-this-is-for {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--bg-tan);
+}
+
+.for-you-list {
+    max-width: 700px;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.for-you-list li {
+    padding: var(--spacing-sm) 0;
+    padding-left: 2.5rem;
+    position: relative;
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+}
+
+.for-you-list li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* CTA Section */
+.cta {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    color: white;
+    margin-bottom: var(--spacing-md);
+}
+
+.cta p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto var(--spacing-lg);
+    opacity: 0.95;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 1.25rem 3rem;
+    background-color: white;
+    color: var(--primary);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.guarantee {
+    margin-top: var(--spacing-md);
+    font-size: 0.95rem;
+    opacity: 0.85;
+}
+
+/* Footer */
+.footer {
+    background-color: #3a3a3a;
+    color: white;
+    padding: var(--spacing-md) 0;
+    text-align: center;
+}
+
+.footer p {
+    opacity: 0.6;
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+
+    .price-badge {
+        font-size: 1.5rem;
+    }
+
+    .value-grid,
+    .process-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">Dr. Christopher Butler</div>
+            <a href="index.html" class="back-link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Back to Home
+            </a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Health Assessment Deep Dive</h1>
+            <p class="hero-subtitle">Get crystal clear direction on your health journey</p>
+            <p class="hero-description">A comprehensive 60-minute consultation with Dr. Butler to assess your brain health, habits, lifestyle, and goals—followed by a personalized 30-day action plan and follow-up support.</p>
+
+            <div class="price-badge">$195</div>
+            <p class="price-note">One-time investment • Includes 30-day plan & follow-up call</p>
+        </div>
+    </section>
+
+    <section class="value">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why This Assessment Is Different</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="value-grid">
+                <div class="value-card">
+                    <h3>No Guessing</h3>
+                    <p>Walk away with a clear "start here, do this" roadmap tailored specifically to your body, brain, and goals.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Root Cause Focus</h3>
+                    <p>We don't chase symptoms. We identify the underlying patterns affecting your energy, focus, and overall health.</p>
+                </div>
+                <div class="value-card">
+                    <h3>Actionable Plan</h3>
+                    <p>You'll receive a detailed 30-day protocol designed to create measurable improvements in how you think, feel, and perform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="whats-included">
+        <div class="container">
+            <div class="section-header">
+                <h2>What's Included</h2>
+                <div class="section-divider"></div>
+            </div>
+            <ul class="included-list">
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>60-Minute Deep Dive Session</strong>
+                        Comprehensive assessment of your brain health, daily habits, stress levels, sleep quality, nutrition, and health goals with Dr. Butler.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>Personalized 30-Day Action Plan</strong>
+                        A clear, step-by-step protocol customized to your specific needs—no generic advice, just what works for your body and lifestyle.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>30-Day Follow-Up Call</strong>
+                        Accountability check-in to review progress, troubleshoot challenges, and refine your approach based on real results.
+                    </div>
+                </li>
+                <li>
+                    <span class="check-icon">✓</span>
+                    <div>
+                        <strong>Brain Health & Performance Insights</strong>
+                        Understanding of how your current habits are affecting cognition, energy, and long-term wellness—with actionable fixes.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Book Your Session</h3>
+                    <p>Schedule your 60-minute deep dive assessment at a time that works for you.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Deep Dive Call</h3>
+                    <p>We'll assess your brain health, habits, lifestyle patterns, and wellness goals in detail.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Your Plan</h3>
+                    <p>Receive a personalized 30-day protocol with clear action steps tailored to your needs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Follow-Up Support</h3>
+                    <p>30 days later, we'll reconnect to review progress and optimize your approach.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="who-this-is-for">
+        <div class="container">
+            <div class="section-header">
+                <h2>This Is For You If...</h2>
+                <div class="section-divider"></div>
+            </div>
+            <ul class="for-you-list">
+                <li>You're tired of feeling foggy, fatigued, or mentally scattered and want clarity on what's actually wrong</li>
+                <li>You've tried supplements, diets, or wellness trends but nothing seems to stick or create lasting change</li>
+                <li>You want to optimize your brain health, focus, and energy without relying on stimulants</li>
+                <li>You're ready for expert guidance that cuts through the noise and gives you a personalized roadmap</li>
+                <li>You value accountability and want someone in your corner who understands root-cause health</li>
+                <li>You're committed to making real changes and want a clinician-designed plan, not generic advice</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Book your Health Assessment Deep Dive and get the clarity and direction you've been looking for.</p>
+            <a href="#" class="btn-primary">Book Your Assessment - $195</a>
+            <p class="guarantee">Investment: $195 • Includes initial session, 30-day plan & follow-up call</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Dr. Christopher Butler. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

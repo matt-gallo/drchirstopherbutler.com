@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sovereign Healthcare: The Wake-Up Call | Free Live Session with Dr. Christopher Butler</title>
+    <meta name="description" content="A live wake-up call with Dr. Christopher Butler on the truth behind modern healthcare—why people are getting sicker earlier, why symptoms go ignored until it's too late, and how to reclaim control over your body, mind, and long-term health.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --bg: #0a0e0d;
+            --deep: #151a18;
+            --primary: #ff5722;
+            --primary-dark: #d84315;
+            --accent: #ff9800;
+            --accent-light: #ffb74d;
+            --red: #e53e3e;
+            --text: #f4f6f5;
+            --muted: rgba(244, 246, 245, 0.65);
+            --card: rgba(20, 25, 23, 0.88);
+            --card-elevated: rgba(20, 25, 23, 0.92);
+            --border-glow: rgba(255, 87, 34, 0.25);
+            --radius-lg: 28px;
+            --radius-md: 18px;
+            --shadow-lg: 0 34px 60px rgba(6, 8, 7, 0.5);
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--bg);
+            background-image:
+                radial-gradient(circle at 8% 12%, rgba(255, 87, 34, 0.15), transparent 55%),
+                radial-gradient(circle at 88% 18%, rgba(255, 152, 0, 0.12), transparent 60%),
+                radial-gradient(circle at 50% 90%, rgba(255, 87, 34, 0.1), transparent 65%),
+                linear-gradient(130deg, #0a0e0d 0%, #151a18 60%, #0a0e0d 100%);
+            color: var(--text);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
+
+        .wrap {
+            width: min(1100px, 100% - 3.5rem);
+            margin: 0 auto;
+            padding: 0 clamp(1.5rem, 5vw, 3rem);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: clamp(1.35rem, 3vw, 1.85rem);
+            font-weight: 600;
+        }
+
+        p {
+            line-height: 1.75;
+        }
+
+        /* Header */
+        .top-bar {
+            position: sticky;
+            top: 0;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem clamp(1.5rem, 5vw, 3rem);
+            background: rgba(7, 16, 12, 0.92);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(14px);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        /* Hero */
+        .hero {
+            padding: clamp(5rem, 10vw, 8rem) 0 clamp(4rem, 8vw, 6rem);
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 4% 3%;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 40px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .event-badge {
+            display: inline-block;
+            background: rgba(255, 87, 34, 0.15);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(255, 87, 34, 0.3);
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-subhead {
+            font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+            color: var(--muted);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 8px 24px rgba(255, 87, 34, 0.4);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 87, 34, 0.6);
+            background: linear-gradient(135deg, #ff6e40 0%, var(--primary) 100%);
+        }
+
+        /* Sections */
+        section {
+            padding: clamp(4rem, 8vw, 6.5rem) 0;
+        }
+
+        .section-surface {
+            background: var(--card-elevated);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-glow);
+            box-shadow: var(--shadow-lg);
+            padding: clamp(2.5rem, 5vw, 4rem);
+            backdrop-filter: blur(8px);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--text);
+        }
+
+        /* Call Section */
+        .call-text {
+            max-width: 750px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            line-height: 1.9;
+        }
+
+        .call-text p {
+            margin-bottom: 1.5rem;
+            color: var(--muted);
+        }
+
+        .call-text strong {
+            color: var(--text);
+        }
+
+        .call-bullets {
+            list-style: none;
+            margin: 1.5rem 0;
+            padding-left: 0;
+        }
+
+        .call-bullets li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: var(--text);
+        }
+
+        .call-bullets li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .flag-statement {
+            background: rgba(255, 87, 34, 0.12);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem 2rem;
+            border-radius: var(--radius-md);
+            margin-top: 2rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text);
+            text-align: center;
+            box-shadow: 0 0 30px rgba(255, 87, 34, 0.15);
+        }
+
+        /* What This Is */
+        .what-this-is {
+            background: rgba(255, 87, 34, 0.08);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255, 87, 34, 0.25);
+            max-width: 850px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .what-this-is p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .what-this-is p:first-child {
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .what-this-is h3 {
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            font-size: 1.4rem;
+        }
+
+        .rally-line {
+            background: rgba(255, 87, 34, 0.12);
+            border: 2px solid var(--primary);
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--text);
+            font-weight: 600;
+            max-width: 850px;
+            margin: 0 auto;
+            box-shadow: 0 0 30px rgba(255, 87, 34, 0.2);
+        }
+
+        /* Learn List */
+        .learn-list {
+            list-style: none;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .learn-list li {
+            padding: 1.25rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 1.1rem;
+            color: var(--text);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .learn-list li:last-child {
+            border-bottom: none;
+        }
+
+        .learn-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        /* Who This Is For */
+        .who-intro {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--muted);
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.8;
+        }
+
+        .who-list {
+            list-style: none;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .who-list li {
+            padding: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            font-size: 1.05rem;
+            color: var(--muted);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .who-list li:last-child {
+            border-bottom: none;
+        }
+
+        .who-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .who-closer {
+            background: rgba(255, 152, 0, 0.1);
+            border-left: 3px solid var(--accent);
+            padding: 1.5rem 2rem;
+            border-radius: var(--radius-md);
+            margin-top: 2rem;
+            font-size: 1.15rem;
+            color: var(--text);
+            text-align: center;
+        }
+
+        /* Authority */
+        .authority-block {
+            background: rgba(255, 87, 34, 0.08);
+            padding: 2.5rem;
+            border-radius: var(--radius-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .authority-block h3 {
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .authority-block p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--muted);
+            margin-bottom: 1rem;
+        }
+
+        .authority-block p:last-child {
+            margin-bottom: 0;
+            color: var(--text);
+            font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+        }
+
+        .cta-headline {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            line-height: 1.4;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-subtext {
+            font-size: 1.15rem;
+            color: var(--muted);
+            margin-bottom: 2.5rem;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: rgba(255, 87, 34, 0.08);
+            padding: 1.75rem 2rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.25rem;
+            border: 1px solid rgba(255, 87, 34, 0.2);
+        }
+
+        .faq-item h3 {
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .faq-item p {
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* Final CTA */
+        .final-statements {
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+        }
+
+        .final-statements h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .final-statements p {
+            font-size: 1.1rem;
+            color: var(--muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .closing-line {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+        }
+
+        /* Registration Form */
+        .form-container {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            background: var(--card-elevated);
+            border: 2px solid var(--primary);
+            border-radius: var(--radius-lg);
+            padding: 3rem;
+            box-shadow: 0 0 40px rgba(255, 87, 34, 0.25);
+        }
+
+        .form-title {
+            text-align: center;
+            color: var(--text);
+            margin-bottom: 2rem;
+            font-size: 1.75rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .form-group input {
+            width: 100%;
+            background: rgba(255, 87, 34, 0.1);
+            border: 1px solid rgba(255, 87, 34, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            color: var(--text);
+            font-size: 1rem;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+        }
+
+        .form-group input::placeholder {
+            color: var(--muted);
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.2);
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 1.25rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 24px rgba(255, 87, 34, 0.4);
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(255, 87, 34, 0.6);
+            background: linear-gradient(135deg, #ff6e40 0%, var(--primary) 100%);
+        }
+
+        .form-privacy {
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--muted);
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: rgba(7, 13, 11, 0.95);
+            color: var(--muted);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.25rem; }
+            h2 { font-size: 1.85rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="logo">Dr. Christopher Butler</div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="wrap">
+            <div class="hero-content">
+                <span class="event-badge">Free Live Session • December 8</span>
+                <h1>We're Done Waiting for the System to Change.<br>It's Time to Take Your Health Back.</h1>
+                <p class="hero-subhead">A live wake-up call with Dr. Christopher Butler on the truth behind modern healthcare—why people are getting sicker earlier, why symptoms go ignored until it's too late, and how to reclaim control over your body, mind, and long-term health.</p>
+                <a href="#register" class="cta-btn">Reserve Your Spot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- THE CALL -->
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">Something is happening in healthcare that nobody is naming.</h2>
+                <div class="call-text">
+                    <p><strong>People feel it.</strong></p>
+                    <ul class="call-bullets">
+                        <li>They're more exhausted.</li>
+                        <li>More inflamed.</li>
+                        <li>More anxious.</li>
+                        <li>Less resilient.</li>
+                        <li>And more confused than ever.</li>
+                    </ul>
+                    <p><strong>Meanwhile:</strong></p>
+                    <ul class="call-bullets">
+                        <li>Labs come back "normal."</li>
+                        <li>Symptoms get brushed aside.</li>
+                        <li>Medications get added.</li>
+                        <li>And nothing actually improves.</li>
+                    </ul>
+                    <p>Most people think this is their fault.</p>
+                    <p><strong>It's not.</strong></p>
+                    <p><strong>It's the system.</strong></p>
+                    <p>And the system is not broken—it's doing <em>exactly</em> what it was built to do.</p>
+                    <div class="flag-statement">
+                        This session is Chris planting the flag and saying it out loud.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT THIS IS -->
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">What This Event Is Really About</h2>
+                <div class="what-this-is">
+                    <p>This is not a wellness workshop.<br>This isn't another "tips and tricks" class.</p>
+                    <p>This is a <strong>reframe of how you understand your health for the rest of your life.</strong></p>
+
+                    <h3>Chris is going to show you:</h3>
+                    <p>Why the modern healthcare model creates dependence, not clarity.</p>
+                    <p>Why chronic issues show up younger and more aggressively than ever before.</p>
+                    <p>Why being "sick" is not the problem—being misled is.</p>
+                    <p>And how sovereignty begins the moment you stop outsourcing your health.</p>
+                </div>
+                <div class="rally-line">
+                    This is a rallying cry for patients who have been ignored, dismissed, or medicated into silence.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT YOU'LL LEARN -->
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">What You'll Learn</h2>
+                <ul class="learn-list">
+                    <li>The invisible forces shaping your health without your consent</li>
+                    <li>Why brain fog, anxiety, fatigue, and sleep problems are <em>signals</em>, not diagnoses</li>
+                    <li>The truth about "normal" lab ranges (and why they mislead millions)</li>
+                    <li>How chronic stress rewires your internal operating system</li>
+                    <li>Why the system focuses on disease management, not true health</li>
+                    <li>The patterns Chris sees in his clinic long before conventional medicine catches them</li>
+                    <li>The step-by-step way to reclaim sovereignty over your physical and emotional health</li>
+                    <li>How to partner with your body instead of fighting it</li>
+                    <li>And the real reason people feel like they're "falling apart" earlier in life</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHO THIS IS FOR -->
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">Who This Is For</h2>
+                <p class="who-intro">This session is for people who:</p>
+                <ul class="who-list">
+                    <li>Have been told "everything looks fine" when nothing feels fine</li>
+                    <li>Know something deeper is going on but can't get answers</li>
+                    <li>Are tired of being reduced to numbers on a chart</li>
+                    <li>Want to understand what their symptoms actually <em>mean</em></li>
+                    <li>Are ready to step into responsibility, agency, and sovereignty</li>
+                    <li>Want a doctor who talks to them like an equal, not a case file</li>
+                </ul>
+                <div class="who-closer">
+                    This is not for people looking for shortcuts or quick fixes.<br>
+                    This is for people who want <strong>truth, clarity, and direction.</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT DR. BUTLER -->
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">About Dr. Butler</h2>
+                <div class="authority-block">
+                    <h3>Dr. Christopher Butler</h3>
+                    <p>With over 30 years of clinical experience in Functional Medicine and Chinese Medicine, Dr. Butler has treated thousands of patients and seen firsthand how modern healthcare fails to identify early patterns of dysfunction—patterns that later become preventable conditions.</p>
+                    <p>His work blends rigorous research, clinical observation, and a deep respect for the body's intelligence.</p>
+                    <p>This event is the message he <em>wishes he could give every patient during a 30-minute appointment</em>—but never has the time to say.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA BREAK -->
+    <section>
+        <div class="wrap">
+            <div class="section-surface cta-section">
+                <h2 class="cta-headline">If you've ever felt like no one is listening, you're not alone—and you're not wrong.</h2>
+                <p class="cta-subtext">The system isn't designed for your sovereignty.<br>But you are.</p>
+                <p class="cta-subtext"><strong>This is your moment to take your health back.</strong></p>
+                <a href="#register" class="cta-btn">Claim Your Free Ticket</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+        <div class="wrap">
+            <div class="section-surface">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <h3>Is this really free?</h3>
+                    <p>Yes. No sales pitch, no hidden agenda. Just truth, clarity, and direction.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Will there be a replay?</h3>
+                    <p>Yes, but attending live gives you access to the Q&A where Chris addresses real challenges in real time.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is this medical advice?</h3>
+                    <p>No. This is education—designed to help you understand your body and your health in a way a 15-minute appointment never could.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do I need prior knowledge?</h3>
+                    <p>No. Chris teaches in a way that's grounded, clear, and easy to follow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="register">
+        <div class="wrap">
+            <div class="section-surface">
+                <div class="final-statements">
+                    <h3>You don't need more noise. You need clarity.</h3>
+                    <p></p>
+                    <h3>You don't need more appointments. You need agency.</h3>
+                    <p></p>
+                    <h3>You don't need a new system. You need sovereignty.</h3>
+                </div>
+                <p class="closing-line">This is where it starts.</p>
+
+                <div class="form-container">
+                    <h2 class="form-title">Reserve Your Spot</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <button type="submit" class="submit-btn">Reserve Your Spot</button>
+                        <p class="form-privacy">Your information is private and will never be shared.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="wrap">
+            <p>&copy; 2025 Dr. Christopher Butler. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

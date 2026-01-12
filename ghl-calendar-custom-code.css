@@ -1,0 +1,54 @@
+/* NeuroClarity Calendar Custom CSS for GHL - MINIMAL */
+/* Paste this into your GHL Calendar Settings > Customize > Custom Code section */
+
+<style>
+/* Only style the key elements - don't override everything */
+
+/* Month/Year buttons - use your green */
+button[class*="month"],
+button[class*="year"],
+.calendar-nav button {
+    background-color: #1f6b4f !important;
+    color: white !important;
+    border: none !important;
+}
+
+button[class*="month"]:hover,
+button[class*="year"]:hover,
+.calendar-nav button:hover {
+    background-color: #2d8a68 !important;
+}
+
+/* Primary action buttons */
+button[type="submit"],
+.btn-primary,
+button[class*="primary"] {
+    background: linear-gradient(135deg, #f0c15b 0%, #d4a841 100%) !important;
+    color: #0f211a !important;
+    border: none !important;
+    border-radius: 50px !important;
+    padding: 12px 32px !important;
+    font-weight: 600 !important;
+}
+
+button[type="submit"]:hover,
+.btn-primary:hover {
+    box-shadow: 0 8px 16px rgba(240, 193, 91, 0.3) !important;
+}
+
+/* Selected date/time slots */
+.selected,
+[class*="selected"],
+button.active,
+.active {
+    background-color: #1f6b4f !important;
+    color: white !important;
+}
+
+/* Time slot hover */
+button[class*="slot"]:hover,
+button[class*="time"]:hover {
+    background-color: rgba(31, 107, 79, 0.1) !important;
+    border-color: #1f6b4f !important;
+}
+</style>
