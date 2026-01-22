@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Supplements & Products | Dr. Christopher Butler</title>
+    <meta name="description" content="Professional-grade supplements and health solutions recommended by Dr. Butler, including Chinese herbal formulas, targeted nutritional support, and cognitive health products.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* View Toggle */
+        .view-controls {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: var(--spacing-md);
+            gap: 0.5rem;
+        }
+
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .view-toggle button {
+            padding: 0.5rem 1rem;
+            border: none;
+            background: transparent;
+            color: var(--text-medium);
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .view-toggle button:hover {
+            background: var(--bg-tan);
+        }
+
+        .view-toggle button.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .view-toggle svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Grid View */
+        .product-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border);
+            overflow: hidden;
+            flex-shrink: 0;
+            padding: 1rem;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .product-image svg {
+            width: 64px;
+            height: 64px;
+            color: var(--accent);
+            opacity: 0.3;
+        }
+
+        .product-content {
+            padding: var(--spacing-md);
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .product-header {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            min-height: 3.5rem;
+        }
+
+        .product-description {
+            color: var(--text-medium);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
+            min-height: 6rem;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+
+        .product-footer {
+            border-top: 1px solid var(--border);
+            padding-top: var(--spacing-sm);
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            min-height: 2rem;
+        }
+
+        .product-brand {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: var(--spacing-sm);
+            font-style: italic;
+            min-height: 1.5rem;
+        }
+
+        .product-link {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .product-link:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+        }
+
+        @media (min-width: 768px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* List View */
+        .products-grid.list-view {
+            grid-template-columns: 1fr;
+        }
+
+        .products-grid.list-view .product-card {
+            flex-direction: row;
+            height: auto;
+        }
+
+        .products-grid.list-view .product-image {
+            width: 200px;
+            height: auto;
+            min-height: 200px;
+            border-bottom: none;
+            border-right: 1px solid var(--border);
+        }
+
+        .products-grid.list-view .product-content {
+            flex-direction: row;
+            gap: var(--spacing-md);
+        }
+
+        .products-grid.list-view .product-header {
+            flex: 2;
+        }
+
+        .products-grid.list-view .product-footer {
+            flex: 1;
+            border-top: none;
+            border-left: 1px solid var(--border);
+            padding-top: 0;
+            padding-left: var(--spacing-md);
+            margin-top: 0;
+            justify-content: center;
+        }
+
+        .products-grid.list-view .product-name {
+            min-height: auto;
+        }
+
+        .products-grid.list-view .product-description {
+            min-height: auto;
+            -webkit-line-clamp: 3;
+        }
+
+        /* Mobile list view adjustments */
+        @media (max-width: 767px) {
+            .products-grid.list-view .product-card {
+                flex-direction: column;
+            }
+
+            .products-grid.list-view .product-image {
+                width: 100%;
+                height: 200px;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .products-grid.list-view .product-content {
+                flex-direction: column;
+            }
+
+            .products-grid.list-view .product-footer {
+                border-left: none;
+                border-top: 1px solid var(--border);
+                padding-left: 0;
+                padding-top: var(--spacing-sm);
+            }
+        }
+
+        /* Shopping Cart */
+        .cart-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .cart-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .cart-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .cart-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            z-index: 1000;
+        }
+
+        .cart-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .cart-header {
+            padding: var(--spacing-md);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h3 {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin: 0;
+        }
+
+        .cart-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            color: var(--text-medium);
+        }
+
+        .cart-close:hover {
+            color: var(--primary);
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: var(--spacing-md);
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        .cart-item-image img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .cart-item-details {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .cart-item-brand {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .cart-item-price {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: var(--text-light);
+            cursor: pointer;
+            padding: 0.25rem;
+        }
+
+        .cart-item-remove:hover {
+            color: #e74c3c;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-light);
+        }
+
+        .cart-empty svg {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        .cart-footer {
+            padding: var(--spacing-md);
+            border-top: 1px solid var(--border);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+
+        .cart-total-label {
+            font-weight: 600;
+        }
+
+        .cart-total-amount {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .cart-checkout {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cart-checkout:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 767px) {
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .cart-button {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+
+        .category-note {
+            background-color: var(--bg-tan);
+            border-left: 4px solid var(--accent);
+            padding: var(--spacing-md);
+            border-radius: 8px;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .category-note p {
+            margin: 0;
+            color: var(--text-medium);
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="subpage">
+    <header class="header">
+        <div class="container">
+            <div class="logo">Dr. Christopher Butler</div>
+            <nav class="nav">
+                <a href="index.html#services">Services</a>
+                <a href="wellpath-center.html">Clinic</a>
+                <a href="wellpath-community.html">Community</a>
+                <a href="blog.html">Blog</a>
+                <a href="products.html">Products</a>
+                <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/about" target="_blank" rel="noopener" class="btn-secondary-nav">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="subpage-hero">
+        <div class="container">
+            <p class="eyebrow">Dr. Butler's Curated Selection</p>
+            <h1>Professional Supplements & Solutions</h1>
+            <p class="lead">After years of clinical experience, these are the specific products, herbs, and supplements Dr. Butler relies on and recommends. We're making them available to you at the best prices possible.</p>
+        </div>
+    </section>
+
+    <section class="subpage-section">
+        <div class="container">
+            <div class="category-note">
+                <p><strong>Trusted by Dr. Butler for Years:</strong> These aren't just products on a shelf—they're the same professional-grade solutions Dr. Butler has used in his practice for years with consistently excellent results. Each one has been carefully selected based on clinical effectiveness, quality sourcing, and evidence-based principles. We've negotiated the best pricing possible to make these proven formulas and solutions accessible to you.</p>
+            </div>
+
+            <div class="category-note" style="background-color: #f0f9ff; border-left-color: var(--primary);">
+                <p><strong>Shipping Information:</strong> Free shipping on all orders over $150. Shipping rates calculated at checkout. Currently shipping within the US only. Terms and conditions apply.</p>
+            </div>
+
+            <div class="view-controls">
+                <div class="view-toggle">
+                    <button id="gridViewBtn" class="active" aria-label="Grid view">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"></rect>
+                            <rect x="14" y="3" width="7" height="7"></rect>
+                            <rect x="3" y="14" width="7" height="7"></rect>
+                            <rect x="14" y="14" width="7" height="7"></rect>
+                        </svg>
+                        Grid
+                    </button>
+                    <button id="listViewBtn" aria-label="List view">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="8" y1="6" x2="21" y2="6"></line>
+                            <line x1="8" y1="12" x2="21" y2="12"></line>
+                            <line x1="8" y1="18" x2="21" y2="18"></line>
+                            <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                            <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                            <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                        </svg>
+                        List
+                    </button>
+                </div>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/696e7e51df5fa5b27c836d1f.png" alt="NeuroClarity Solution">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-name">NeuroClarity Solution</h3>
+                            <p class="product-description">Complete 30-day nervous system protocol. Five practitioner-grade formulas, live sessions, 1:1 consultation, and private community. Regulate your nervous system—or you don't pay.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$397 <span style="font-size: 0.75rem; font-weight: 400; color: var(--text-light);">($1,149 value)</span></div>
+                            <div class="product-brand">30-Day Protocol • Dr. Butler</div>
+                            <a href="https://neuroclaritysolution.com" target="_blank" rel="noopener" class="product-link">Start Your Protocol</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/696e7ea215885e617ac40ad4.jpg" alt="Cold Quell (CQ)">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                            <h3 class="product-name">Cold Quell (CQ)</h3>
+                            <p class="product-description">Frontline defense for the first tickle to the end. A comprehensive formula for early-stage immune support through complete recovery.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$60.00</div>
+                            <div class="product-brand">Blue Poppy Herbs</div>
+                            <a href="#" class="product-link">Add to Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/696e7fc615885e5d89c43fc5.png" alt="Designs for Health Vitamin D Supreme">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">Vitamin D3</h3>
+                        <p class="product-description">The average D level in the US is below the low end of the range. 5000IU daily for prevention, 15-20,000 daily when active infection is present.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$35.00</div>
+                        <div class="product-brand">Designs for Health</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/696e7f1bdf5fa5808f839fbe.webp" alt="Health Concerns Isatis Gold">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">Isatis Gold</h3>
+                        <p class="product-description">Activates Natural Killer Cells. A must in the middle stages of a cold or flu when sore throat or fever is present. Isatis is the most potent antiviral.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$42.00</div>
+                        <div class="product-brand">Health Concerns</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/6966cb909a690c7ea800bd09.jpg" alt="Health Concerns Clear Air">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">Clear Air</h3>
+                        <p class="product-description">Very effective for coughs, even deeply entrenched ones. Helps clear respiratory congestion and support lung health.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$32.00</div>
+                        <div class="product-brand">Health Concerns</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/6966cb90415652def528a0f3.webp" alt="Health Concerns Clear Phlegm">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">Clear Phlegm</h3>
+                        <p class="product-description">When there is a copious amount of phlegm. Especially effective at clearing up lingering phlegm after the active infection has ceased.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$32.00</div>
+                        <div class="product-brand">Health Concerns</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/696e7ee5d4fb902f394fa07b.webp" alt="Blue Poppy Fragrant Passage">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">Fragrant Passage</h3>
+                        <p class="product-description">Targets the sinuses. A must for sinus infections or the sinus congestion that occurs with rhino viruses.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$24.00</div>
+                        <div class="product-brand">Blue Poppy Herbs</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/6966cb90415652afc028a0f4.jpg" alt="Plum Flower Huang Lian Jie Ou">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">Huang Lian Jie Ou</h3>
+                        <p class="product-description">The most potent anti-viral on the market by a long shot. A potent addition to Fragrant Passage in sinus infections. Good for any type of bacterial infection, even topical infections.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$30.00</div>
+                        <div class="product-brand">Plum Flower Teapills</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/696e80e0c7f17f6111c71aff.png" alt="Aloha Medicinals Immune Assist">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">Immune Assist</h3>
+                        <p class="product-description">A potent mixture of medicinal mushrooms that will greatly boost NK cell activity as well as assist in boosting immune protection in height of cold and flu season.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$66.00</div>
+                        <div class="product-brand">Aloha Medicinals</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/6966cb90b9e85c669808f922.jpg" alt="Bi Yan Ling Sinus Spray">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">Bi Yan Ling</h3>
+                        <p class="product-description">Interesting and very effective sinus spray. It will restore clear air-flow to even the most congested sinus. My patients love it.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$31.00</div>
+                        <div class="product-brand">Dermatology M</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/6966cb904d18c506a521734e.png" alt="Apex Energetics X-Viromin">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">X-Viromin</h3>
+                        <p class="product-description">Designed for chronic viral infections, but can be used to improve what's called viral resiliency.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$40.00</div>
+                        <div class="product-brand">Apex Energetics</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/6966c6dde2d75b26a92f722a.jpg" alt="PlumFlower Bi Yan Pian">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">Bi Yan Pian</h3>
+                        <p class="product-description">A famous Chinese herbal formula that will stop a clear runny nose like turning off a faucet.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$22.00</div>
+                        <div class="product-brand">PlumFlower Teapills</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://storage.googleapis.com/msgsndr/MsoeghK7h7k7098rgLJx/media/6966c6a0b9e85ccd89084c1a.jpg" alt="PlumFlower Gan Mao Ling">
+                    </div>
+                    <div class="product-content">
+                        <div class="product-header">
+                        <h3 class="product-name">Gan Mao Ling</h3>
+                        <p class="product-description">A modern Chinese herbal formula that seems to be a key with some of the more modern viruses.</p>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$20.00</div>
+                        <div class="product-brand">PlumFlower Teapills</div>
+                        <a href="#" class="product-link">Add to Cart</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="subpage-section light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Need Personalized Guidance?</h2>
+                <div class="section-divider"></div>
+                <p class="lead">Schedule a consultation to determine which products and solutions are right for your specific needs and health goals.</p>
+            </div>
+            <div class="hero-cta" style="justify-content: center;">
+                <a href="book-acupuncture.html" class="btn-primary">Schedule Consultation</a>
+                <a href="contact.html" class="btn-secondary">Contact Dr. Butler</a>
+            </div>
+
+            <div style="margin-top: 3rem; padding: 2rem; background: #fff9e6; border: 1px solid #e6d4a0; border-radius: 8px; text-align: center;">
+                <p style="margin: 0; color: var(--text-medium); font-size: 0.9rem; line-height: 1.6;">
+                    <strong>Medical Disclaimer:</strong> The information and products on this page are not intended to diagnose, treat, cure, or prevent any disease, and are not a substitute for professional medical advice, diagnosis, or treatment. Always consult with a qualified healthcare provider before starting any new supplement regimen or if you have questions about a medical condition.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="practice.html">Our Practice</a></li>
+                        <li><a href="approach.html">Dr. Butler's Approach</a></li>
+                        <li><a href="services-overview.html">Services Overview</a></li>
+                        <li><a href="insurance.html">Insurance Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="acupuncture.html">Acupuncture</a></li>
+                        <li><a href="functional-medicine.html">Functional Medicine</a></li>
+                        <li><a href="telemedicine.html">Telemedicine</a></li>
+                        <li><a href="book-acupuncture.html">Schedule Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Community & Resources</h4>
+                    <ul>
+                        <li><a href="wellpath-center.html">Clinic Overview</a></li>
+                        <li><a href="wellpath-community.html">WellPath Community</a></li>
+                        <li><a href="products.html">Professional Supplements</a></li>
+                        <li><a href="contact.html">Contact & Directions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p class="footer-address">301 North Ave East<br>Cranford, NJ 07016</p>
+                    <p class="footer-phone"><a href="tel:9737057800">(973) 705-7800</a></p>
+                    <p class="footer-schedule">Tuesdays & Thursdays</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Dr. Christopher Butler. All rights reserved.</p>
+                <div style="margin-top: 0.5rem;">
+                    <a href="terms.html" style="color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 0.5rem; font-size: 0.8rem;">Terms & Conditions</a>
+                    <a href="privacy.html" style="color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 0.5rem; font-size: 0.8rem;">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Shopping Cart UI -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" id="cartClose">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="cart-empty">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="cart-total">
+                <span class="cart-total-label">Total:</span>
+                <span class="cart-total-amount" id="cartTotal">$0.00</span>
+            </div>
+            <button class="cart-checkout" id="checkoutButton">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <button class="cart-button" id="cartButton">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-badge" id="cartBadge" style="display: none;">0</span>
+    </button>
+
+    <script>
+        // Shopping Cart Management
+        class ShoppingCart {
+            constructor() {
+                this.items = this.loadCart();
+                this.init();
+            }
+
+            init() {
+                // Update UI on load
+                this.updateCartUI();
+
+                // Add event listeners to all "Add to Cart" buttons
+                document.querySelectorAll('.product-link').forEach(button => {
+                    // Skip external links (NeuroClarity)
+                    if (button.href && !button.href.includes('#')) {
+                        return;
+                    }
+
+                    button.textContent = 'Add to Cart';
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const card = button.closest('.product-card');
+                        this.addToCart(card);
+                    });
+                });
+
+                // Cart button click
+                document.getElementById('cartButton').addEventListener('click', () => {
+                    this.openCart();
+                });
+
+                // Close cart
+                document.getElementById('cartClose').addEventListener('click', () => {
+                    this.closeCart();
+                });
+
+                document.getElementById('cartOverlay').addEventListener('click', () => {
+                    this.closeCart();
+                });
+
+                // Checkout button
+                document.getElementById('checkoutButton').addEventListener('click', () => {
+                    this.checkout();
+                });
+            }
+
+            addToCart(card) {
+                const product = {
+                    id: Date.now(),
+                    name: card.querySelector('.product-name').textContent,
+                    brand: card.querySelector('.product-brand').textContent,
+                    price: card.querySelector('.product-price').textContent.split(' ')[0].replace('$', ''),
+                    image: card.querySelector('.product-image img')?.src || ''
+                };
+
+                this.items.push(product);
+                this.saveCart();
+                this.updateCartUI();
+                this.openCart();
+
+                // Visual feedback
+                const button = card.querySelector('.product-link');
+                const originalText = button.textContent;
+                button.textContent = 'Added!';
+                button.style.background = '#27ae60';
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '';
+                }, 1000);
+            }
+
+            removeFromCart(id) {
+                this.items = this.items.filter(item => item.id !== id);
+                this.saveCart();
+                this.updateCartUI();
+            }
+
+            updateCartUI() {
+                const badge = document.getElementById('cartBadge');
+                const cartItems = document.getElementById('cartItems');
+                const cartFooter = document.getElementById('cartFooter');
+                const cartTotal = document.getElementById('cartTotal');
+
+                // Update badge
+                if (this.items.length > 0) {
+                    badge.textContent = this.items.length;
+                    badge.style.display = 'flex';
+                } else {
+                    badge.style.display = 'none';
+                }
+
+                // Update cart items
+                if (this.items.length === 0) {
+                    cartItems.innerHTML = `
+                        <div class="cart-empty">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            <p>Your cart is empty</p>
+                        </div>
+                    `;
+                    cartFooter.style.display = 'none';
+                } else {
+                    cartItems.innerHTML = this.items.map(item => `
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="${item.image}" alt="${item.name}">
+                            </div>
+                            <div class="cart-item-details">
+                                <div class="cart-item-name">${item.name}</div>
+                                <div class="cart-item-brand">${item.brand}</div>
+                                <div class="cart-item-price">$${item.price}</div>
+                            </div>
+                            <button class="cart-item-remove" onclick="cart.removeFromCart(${item.id})">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    `).join('');
+                    cartFooter.style.display = 'block';
+
+                    // Calculate total
+                    const total = this.items.reduce((sum, item) => sum + parseFloat(item.price), 0);
+                    cartTotal.textContent = `$${total.toFixed(2)}`;
+                }
+            }
+
+            openCart() {
+                document.getElementById('cartSidebar').classList.add('open');
+                document.getElementById('cartOverlay').classList.add('active');
+            }
+
+            closeCart() {
+                document.getElementById('cartSidebar').classList.remove('open');
+                document.getElementById('cartOverlay').classList.remove('active');
+            }
+
+            saveCart() {
+                localStorage.setItem('shoppingCart', JSON.stringify(this.items));
+            }
+
+            loadCart() {
+                const saved = localStorage.getItem('shoppingCart');
+                return saved ? JSON.parse(saved) : [];
+            }
+
+            checkout() {
+                // TODO: Replace with your actual GHL checkout URL
+                // You'll need to configure this with your GHL product IDs
+                alert('To complete the GHL integration:\n\n1. Create products in GHL Product Catalog\n2. Get product IDs for each item\n3. Replace the checkout() function with GHL redirect URL\n\nFor now, here are your cart items:\n\n' +
+                    this.items.map(item => `${item.name} - $${item.price}`).join('\n'));
+
+                // Example GHL checkout redirect:
+                // const productIds = this.items.map(item => item.ghlProductId).join(',');
+                // window.location.href = `https://yoursubdomain.gohighlevel.com/checkout?products=${productIds}`;
+            }
+        }
+
+        // Initialize cart
+        const cart = new ShoppingCart();
+
+        // View toggle functionality
+        const gridViewBtn = document.getElementById('gridViewBtn');
+        const listViewBtn = document.getElementById('listViewBtn');
+        const productsGrid = document.getElementById('productsGrid');
+
+        gridViewBtn.addEventListener('click', () => {
+            productsGrid.classList.remove('list-view');
+            gridViewBtn.classList.add('active');
+            listViewBtn.classList.remove('active');
+            localStorage.setItem('productView', 'grid');
+        });
+
+        listViewBtn.addEventListener('click', () => {
+            productsGrid.classList.add('list-view');
+            listViewBtn.classList.add('active');
+            gridViewBtn.classList.remove('active');
+            localStorage.setItem('productView', 'list');
+        });
+
+        // Restore saved view preference
+        const savedView = localStorage.getItem('productView');
+        if (savedView === 'list') {
+            listViewBtn.click();
+        }
+    </script>
+</body>
+</html>
