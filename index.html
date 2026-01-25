@@ -14,7 +14,12 @@
     <header class="header">
         <div class="container">
             <div class="logo">Dr. Christopher Butler</div>
-            <nav class="nav">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
                 <a href="#services">Services</a>
                 <a href="wellpath-center.html">Clinic</a>
                 <a href="wellpath-community.html">Community</a>
@@ -24,6 +29,43 @@
             </nav>
         </div>
     </header>
+
+    <!-- Mobile Announcements (visible only on mobile) -->
+    <section class="mobile-announcements">
+        <div class="container">
+            <h3>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+                Announcements
+            </h3>
+
+            <div class="announcement-item">
+                <span class="announcement-badge event">ENCORE</span>
+                <h4>Brain Health Live Session</h4>
+                <p>Join us Sunday, January 25 at 6pm EST for a live session on cold weather's impact on your nervous and immune systems.</p>
+                <div class="announcement-date">
+                    <a href="webinar-registration.html" style="color: var(--primary); text-decoration: none; font-weight: 500;">Register Now →</a>
+                </div>
+            </div>
+
+            <div class="announcement-item">
+                <span class="announcement-badge event">Event</span>
+                <h4>Community Q&A Session</h4>
+                <p>Live Q&A with Dr. Butler. Bring your health questions and get clear, practical answers.</p>
+                <div class="announcement-date">
+                    February 6, 2026 • <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/home" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none; font-weight: 500;">Join Community →</a>
+                </div>
+            </div>
+
+            <div class="announcement-item">
+                <span class="announcement-badge new">New</span>
+                <h4>Now Accepting Insurance</h4>
+                <p>Butler Acupuncture Center is now in-network with Cigna, BCBS, Aetna & United Healthcare.</p>
+                <div class="announcement-date">November 2025</div>
+            </div>
+        </div>
+    </section>
 
     <section class="hero">
         <div class="hero-overlay"></div>
@@ -331,6 +373,24 @@
             } else {
                 toggleIcon.innerHTML = '<path d="M9 18l6-6-6-6"/>';
             }
+        });
+
+        // Mobile menu toggle functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
         });
     </script>
 </body>
