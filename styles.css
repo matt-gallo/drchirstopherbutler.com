@@ -114,6 +114,12 @@ p {
     font-weight: 600;
     color: var(--primary);
     letter-spacing: -0.01em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--primary-dark);
 }
 
 .nav {
