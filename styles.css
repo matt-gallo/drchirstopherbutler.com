@@ -758,18 +758,22 @@ section {
 
 .carousel-wrapper {
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     margin-bottom: 1rem;
+    width: 100%;
 }
 
 .carousel-container {
     display: flex;
     gap: 1rem;
     overflow-x: auto;
+    overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
     -webkit-overflow-scrolling: touch;
     scroll-behavior: smooth;
+    padding: 0;
+    margin: 0;
 }
 
 .carousel-container::-webkit-scrollbar {
@@ -777,7 +781,9 @@ section {
 }
 
 .carousel-item {
-    flex: 0 0 85%;
+    min-width: 85%;
+    max-width: 85%;
+    flex-shrink: 0;
     background-color: var(--bg-white);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -920,6 +926,22 @@ section {
 
     .mobile-announcements-carousel {
         display: block;
+    }
+
+    .mobile-announcements-carousel .container {
+        padding: 0;
+    }
+
+    .mobile-announcements-carousel h3 {
+        padding: 0 var(--spacing-md);
+    }
+
+    .carousel-wrapper {
+        padding: 0 var(--spacing-md);
+    }
+
+    .carousel-dots {
+        padding: 0 var(--spacing-md);
     }
 
     .hero {
