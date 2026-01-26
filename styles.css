@@ -730,8 +730,8 @@ section {
     transform: rotate(-45deg) translate(7px, -7px);
 }
 
-/* Mobile Announcements Section */
-.mobile-announcements {
+/* Mobile Announcements Carousel */
+.mobile-announcements-carousel {
     display: none;
     background-color: var(--bg-light);
     border-top: 1px solid var(--border);
@@ -739,61 +739,7 @@ section {
     padding: var(--spacing-md) 0;
 }
 
-.mobile-announcements .announcement-item {
-    background-color: var(--bg-white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 1rem;
-    margin-bottom: 0.75rem;
-}
-
-.mobile-announcements .announcement-item:last-child {
-    margin-bottom: 0;
-}
-
-.mobile-announcements .announcement-badge {
-    display: inline-block;
-    font-size: 0.65rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    margin-bottom: 0.5rem;
-}
-
-.mobile-announcements .announcement-badge.new {
-    background-color: var(--primary);
-    color: white;
-}
-
-.mobile-announcements .announcement-badge.event {
-    background-color: var(--accent);
-    color: var(--text-dark);
-}
-
-.mobile-announcements .announcement-item h4 {
-    font-family: var(--font-sans);
-    font-size: 1rem;
-    font-weight: 600;
-    margin: 0 0 0.5rem;
-    color: var(--text-dark);
-}
-
-.mobile-announcements .announcement-item p {
-    font-size: 0.9rem;
-    color: var(--text-medium);
-    margin: 0 0 0.5rem;
-    line-height: 1.5;
-}
-
-.mobile-announcements .announcement-date {
-    font-size: 0.8rem;
-    color: var(--text-light);
-    margin-top: 0.5rem;
-}
-
-.mobile-announcements h3 {
+.mobile-announcements-carousel h3 {
     font-family: var(--font-sans);
     font-size: 0.85rem;
     font-weight: 700;
@@ -806,8 +752,102 @@ section {
     gap: 0.5rem;
 }
 
-.mobile-announcements h3 svg {
+.mobile-announcements-carousel h3 svg {
     color: var(--primary);
+}
+
+.carousel-wrapper {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.carousel-container {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    flex: 0 0 85%;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.25rem;
+    scroll-snap-align: start;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.carousel-item .announcement-badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    margin-bottom: 0.75rem;
+}
+
+.carousel-item .announcement-badge.new {
+    background-color: var(--primary);
+    color: white;
+}
+
+.carousel-item .announcement-badge.event {
+    background-color: var(--accent);
+    color: var(--text-dark);
+}
+
+.carousel-item h4 {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem;
+    color: var(--text-dark);
+}
+
+.carousel-item p {
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+}
+
+.carousel-item .announcement-date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-top: 0.5rem;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: var(--primary);
+    width: 24px;
+    border-radius: 4px;
 }
 
 /* Responsive Design */
@@ -878,7 +918,7 @@ section {
         display: block;
     }
 
-    .mobile-announcements {
+    .mobile-announcements-carousel {
         display: block;
     }
 
