@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Memory Actually Works—And Why You Keep Forgetting Things | Dr. Christopher Butler</title>
+    <meta name="description" content="Understand short-term, working, and long-term memory. Learn what's really causing your brain fog and memory problems—and what to do about it.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="subpage">
+    <header class="header">
+        <div class="container">
+            <div class="logo">Dr. Christopher Butler</div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
+                <a href="../index.html#services">Services</a>
+                <a href="../wellpath-center.html">Clinic</a>
+                <a href="../wellpath-community.html">Join Our Community</a>
+                <a href="../blog.html">Blog</a>
+                <a href="../products.html">Products</a>
+                <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/about" target="_blank" rel="noopener" class="btn-secondary-nav">Login</a>
+                <div class="mobile-menu-social">
+                    <a href="https://www.facebook.com/profile.php?id=61553314182225" target="_blank" rel="noopener" aria-label="Facebook" class="mobile-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/drchristopherbutler/" target="_blank" rel="noopener" aria-label="Instagram" class="mobile-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/Christo60823838" target="_blank" rel="noopener" aria-label="X (Twitter)" class="mobile-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <article class="blog-post">
+        <div class="blog-post-header">
+            <div class="container">
+                <p class="blog-meta">
+                    <a href="../blog.html" class="blog-back-link">← Back to all posts</a>
+                    <span class="blog-date">October 8, 2025</span>
+                </p>
+                <h1>How Memory Actually Works—And Why You Keep Forgetting Things</h1>
+                <p class="blog-subtitle">Understanding short-term, working, and long-term memory—plus the real reasons teenagers report Alzheimer's-like symptoms</p>
+            </div>
+        </div>
+
+        <div class="blog-post-content">
+            <div class="container">
+                <div class="blog-content-wrapper">
+                    <p class="lead">Memory isn't just about remembering where you put your keys. It's the foundation of learning, relationships, work performance, and ultimately who you are. When memory falters, your entire interaction with the world changes. But here's what most people don't realize: memory problems aren't always about dementia or aging.</p>
+
+                    <h2>Your Memory Is Your Life Story</h2>
+
+                    <p>Think about it. Everything you know about yourself—where you grew up, who you love, what you're good at, your values, your experiences—all of that is memory. It's not just data storage. It's the lens through which you navigate the world.</p>
+
+                    <p>I recently watched my mother lose her memory to Alzheimer's over about 15 years. By the end, she didn't know who I was. She didn't know who she was. Her entire life story—her parents, her sister, where she grew up, everything—gone. It's a cruel disease, and I knew I could have helped early on, but she refused treatment. It wasn't her model of healthcare.</p>
+
+                    <p>That experience reinforced something I see constantly in practice: <strong>we don't take brain health seriously until it's too late</strong>. But unlike Alzheimer's, most memory problems are reversible when you address the right factors.</p>
+
+                    <h2>The Three Types of Memory (And How They Work Together)</h2>
+
+                    <p>Memory isn't one thing. It's three interconnected systems working in coordination:</p>
+
+                    <h3>1. Short-Term Memory</h3>
+
+                    <p>This is your mental notepad. It holds about seven to nine pieces of information for 15-30 seconds. Think of it like writing down a phone number long enough to dial it.</p>
+
+                    <p>In dementia testing, they give you seven words, ask you to repeat them, then test you 10 minutes later to see how many you retained. You don't need perfect recall, but this test reveals how well your short-term memory is functioning.</p>
+
+                    <p>Short-term memory is temporary unless it gets passed to working memory.</p>
+
+                    <h3>2. Working Memory</h3>
+
+                    <p>Working memory is more sophisticated. It doesn't just hold information—it manipulates it to perform cognitive tasks like:</p>
+
+                    <ul>
+                        <li>Reading comprehension</li>
+                        <li>Problem-solving</li>
+                        <li>Mental arithmetic</li>
+                        <li>Following multi-step instructions</li>
+                    </ul>
+
+                    <p>Here's the critical piece: <strong>working memory has to reach into long-term memory to give new information context</strong>.</p>
+
+                    <p>For example, when you learned to read as a child, you saw the letters Y-O-U and didn't know what they meant. Once you learned that was the word "you" and what it meant, that information went into long-term memory. Now when you read, your working memory instantly accesses that stored knowledge.</p>
+
+                    <p>The same applies to learning tennis, riding a bike, or starting a new job. You learn the fundamentals first (stored in long-term memory), then working memory builds on that foundation to develop more complex skills.</p>
+
+                    <h3>3. Long-Term Memory</h3>
+
+                    <p>Long-term memory can be divided into two types:</p>
+
+                    <p><strong>Declarative memory:</strong> Facts, figures, learned materials—like school lessons or recipes you've memorized.</p>
+
+                    <p><strong>Episodic (non-declarative) memory:</strong> Personal experiences and procedural knowledge—learning to walk, ride a bike, play an instrument.</p>
+
+                    <p>This is the memory that defines you. It's your entire knowledge base, personality, worldview, and skill set. When this fails—as in traumatic brain injury or dementia—people become unrecognizable. Their mood changes, their personality shifts, and they're lost without reference points.</p>
+
+                    <h2>Why Teenagers Report Alzheimer's-Like Symptoms</h2>
+
+                    <p>I've had 18-year-olds fill out health assessments that, if I didn't know their age, I'd assume they were developing dementia. Obviously, that's not what's happening. So what is?</p>
+
+                    <p><strong>Their memory system is being disrupted.</strong></p>
+
+                    <p>These disruptions aren't permanent brain damage. They're functional impairments caused by lifestyle, physiology, and environment. Fix those, and memory improves—sometimes dramatically.</p>
+
+                    <h2>The Real Memory Disruptors (That Aren't Dementia)</h2>
+
+                    <h3>1. Stress</h3>
+
+                    <p>This is the number one memory killer. Here's why it's so powerful:</p>
+
+                    <p>The stress receptors in your hippocampus (the brain's memory center) sit right next to your short-term memory receptors. When you activate the stress response, short-term memory gets suppressed.</p>
+
+                    <p>Why? From an evolutionary perspective, if you're running from a bear, you don't want to be thinking about the argument you had with your spouse that morning. You need total presence to survive.</p>
+
+                    <p>But modern stress is chronic. We worry about the economy, politics, work deadlines, family issues—constantly. This chronic activation inflames those memory receptors, making it nearly impossible to hold onto new information.</p>
+
+                    <h3>2. Blood Sugar Instability</h3>
+
+                    <p>People think about food in terms of weight and appearance. They should be thinking about brain performance.</p>
+
+                    <p>Starting your day with coffee and a croissant (or bagel, or pastry) spikes your blood sugar. Insulin rushes in to bring it down, often overshooting and leaving you with low blood sugar and excess insulin.</p>
+
+                    <p>The result? Fatigue, brain fog, inability to focus, and severely impaired memory formation.</p>
+
+                    <p>Your brain uses 30% of all energy produced from food despite weighing only about eight pounds. Nothing disrupts brain function faster than unstable blood sugar.</p>
+
+                    <p><strong>What helps:</strong> Start your day with protein, avoid high-glycemic carbohydrates, and eat regular meals with adequate protein and quality fats.</p>
+
+                    <h3>3. Sleep Deprivation</h3>
+
+                    <p>I can't tell you how many people say, "My sleep is great—I get five hours a night!"</p>
+
+                    <p>No. You may feel okay because your body is compensating, but your brain hasn't had time to do essential repair work. Most people need 7-9 hours, and it matters when you sleep.</p>
+
+                    <p>Sleeping from 2am to 10am (eight hours) is not the same as sleeping from 10pm to 6am. Your body follows circadian rhythms tied to sunlight. Sleep quality varies throughout the night, and late-night sleep simply isn't as restorative.</p>
+
+                    <p>If you struggle with insomnia, address it. Try natural approaches first, but if nothing else works, medication is better than chronic sleep deprivation. Sleep is that important.</p>
+
+                    <h3>4. Lack of Exercise</h3>
+
+                    <p>Study after study comparing depression treatments—therapy, medication, therapy plus medication—shows that <strong>exercise beats all other interventions by a large margin</strong>.</p>
+
+                    <p>We're built to move. Exercise doesn't mean high-intensity gym workouts (though those are fine). It can be a brisk walk that gets your heart rate up and oxygenates your system.</p>
+
+                    <p>Movement improves circulation, delivers oxygen to the brain, supports neurotransmitter production, and helps shut down the stress response the way we're biologically designed to—through physical activity.</p>
+
+                    <h3>5. Neuroinflammation</h3>
+
+                    <p>This was the topic of last week's session, so I won't go deep here. But neuroinflammation—chronic activation of the brain's immune system—is endemic in modern society.</p>
+
+                    <p>It's triggered by:</p>
+                    <ul>
+                        <li>Medications</li>
+                        <li>Stress</li>
+                        <li>Toxin exposure</li>
+                        <li>Poor antioxidant status</li>
+                        <li>Concussions</li>
+                        <li>Chronic life stress</li>
+                    </ul>
+
+                    <p>What does it feel like? Brain fog. Tasks feel like you're walking through waist-deep snow. Everything requires effort because your brain can't flow freely.</p>
+
+                    <p>The brain's immune system (microglial cells) lacks an off switch, so once activated, neuroinflammation persists unless you actively address it.</p>
+
+                    <h3>6. Anxiety</h3>
+
+                    <p>Anxiety is chemically identical to the stress response—it's a release of catecholamines (adrenaline, epinephrine, norepinephrine) that trigger fight-or-flight.</p>
+
+                    <p>Everyone talks about high cortisol, but cortisol actually tells your adrenal glands to release these catecholamines. When this system gets stuck "on," it has a profound effect on short-term memory.</p>
+
+                    <p>Chronic anxiety over years begins affecting working memory and eventually long-term memory because you're not successfully storing new information.</p>
+
+                    <p>This also applies to ADHD, which often includes significant anxiety. The line between anxiety and ADHD can be blurry—they both disrupt memory in similar ways.</p>
+
+                    <h3>7. Depression</h3>
+
+                    <p>Depression shuts down the frontal lobes—the part of your brain responsible for executive function, problem-solving, language, and personality.</p>
+
+                    <p>When frontal lobe activity drops to 40-50%, you lose joy, engagement, and the ability to interact with the world effectively. This profoundly impacts memory formation, though through different mechanisms than anxiety.</p>
+
+                    <h3>8. Hypothyroidism</h3>
+
+                    <p>Low thyroid drops metabolism in every cell, including brain cells. One of the key questions in thyroid evaluation is: "Do you feel mentally dull? Is it hard to complete tasks?"</p>
+
+                    <p>I see blood tests constantly where doctors check only two thyroid values (usually TSH and T4). You need a full thyroid panel:</p>
+
+                    <ul>
+                        <li>TSH</li>
+                        <li>T4 and Free T4</li>
+                        <li>T3 and Free T3</li>
+                        <li>Thyroid antibodies</li>
+                    </ul>
+
+                    <p>Different types of hypothyroidism require different treatments. A two-value panel misses most of them.</p>
+
+                    <h3>9. Poor Blood Circulation</h3>
+
+                    <p>Microcirculation—the tiniest blood vessels—is the first part of your circulatory system to break down with aging or plaque buildup.</p>
+
+                    <p>These vessels deliver oxygen to brain cells. Without oxygen, your mitochondria can't produce energy, and neurons operate at suboptimal levels.</p>
+
+                    <p>Exercise promotes angiogenesis (growth of new blood vessels), which is one reason it's so powerful for brain health.</p>
+
+                    <p>This also affects people with anemia, heavy menstrual periods, or asthma—conditions you might not associate with brain problems but absolutely impact cognitive function.</p>
+
+                    <h2>The Five Pillars of Brain Health</h2>
+
+                    <p>Whether you're concerned about memory now or want to prevent problems later, these five fundamentals matter most:</p>
+
+                    <ol>
+                        <li><strong>Sleep:</strong> 7-9 hours per night, feeling rested when you wake</li>
+                        <li><strong>Stable Blood Sugar:</strong> Regular meals with protein, avoiding sugar and high-glycemic foods</li>
+                        <li><strong>Exercise:</strong> Daily movement that gets your heart rate up</li>
+                        <li><strong>Stress Management:</strong> Techniques to reduce chronic activation of the stress response</li>
+                        <li><strong>Proper Hydration:</strong> Your brain is 75-85% water</li>
+                    </ol>
+
+                    <p>These aren't optional. They're non-negotiable if you want your brain to function optimally.</p>
+
+                    <h2>A Personal Journey to Health Sovereignty</h2>
+
+                    <p>I've spent 32 years in clinical practice, but my journey started long before that.</p>
+
+                    <p>At 11 years old, I told my mom I was always tired. The doctor tested me and decided I needed more iron—despite eating steak four nights a week. The iron didn't help. That was my first glimpse that the medical system doesn't always have answers.</p>
+
+                    <p>At 18, I discovered health food stores and nutrition books. The radical idea that changing your diet could change your health was completely novel to me. I started experimenting.</p>
+
+                    <p>I went to acupuncture school while running a health food store and raising kids. It was brutal, and my brain wasn't as focused as I needed it to be. I had ADHD, scattered focus, and intense sugar cravings. I'd skip meals, my blood sugar would swing wildly, and I told myself to just grind harder.</p>
+
+                    <p>Then one day, I noticed that every time I ate something sweet, anxiety would spike when the sugar wore off. My focus would vanish.</p>
+
+                    <p>I decided to give up sugar for Lent—using that neuroplasticity I'd developed growing up Catholic. The first week was hard. But then calm showed up where restlessness used to be. My focus steadied. I realized I could make a choice that changes my brain chemistry.</p>
+
+                    <p>Later, I cut out gluten. Within two days, my bloating disappeared, constipation resolved, digestion improved, and a gray mood I'd carried for decades lifted. I was almost angry I'd waited so long.</p>
+
+                    <p>Then came the vegan years. I was cold, weak, losing strength. My Chinese medicine teachers looked at me like I was out of my mind. One day I bought bison chili at Whole Foods and my body inhaled it—two pints in a row. That day in class, my focus and energy were dramatically better.</p>
+
+                    <p>The lesson? <strong>You cannot let ideology override physiology.</strong> Everyone's different. True health sovereignty is listening to your body, not dogma.</p>
+
+                    <h2>Why I'm Teaching These Sessions</h2>
+
+                    <p>After years of functional medicine training and clinical practice, I've stacked enough wins to know what works: real food, quality sleep, daily movement, targeted brain support.</p>
+
+                    <p>The modern medical system is failing people. Doctors have become employees of large conglomerations, seeing patients for eight minutes and running through standardized scripts. You can't diagnose complex chronic problems in eight minutes.</p>
+
+                    <p>Health sovereignty means understanding how your body works well enough to ask the right questions, try the right interventions, and prevent problems before they become crises.</p>
+
+                    <p>That's why I'm keeping these Brain Health sessions free and building the WellPath Community—to give people access to information that helps them become informed stewards of their own health.</p>
+
+                    <h2>What If It's Not Dementia?</h2>
+
+                    <p>If you're experiencing memory problems, don't assume it's Alzheimer's. Ask:</p>
+
+                    <ul>
+                        <li>How's my sleep quality and duration?</li>
+                        <li>Am I managing stress effectively?</li>
+                        <li>Is my blood sugar stable throughout the day?</li>
+                        <li>Am I exercising regularly?</li>
+                        <li>Have I checked my thyroid comprehensively?</li>
+                        <li>Could I have neuroinflammation?</li>
+                        <li>Am I dealing with chronic anxiety or depression?</li>
+                    </ul>
+
+                    <p>Address these factors first. In many cases—even in people with family histories of dementia—memory improves dramatically when you fix the underlying physiology.</p>
+
+                    <p>Emotions aren't just thoughts. They're biochemical signals. When that signaling system goes awry, your entire life goes awry. But you have far more control over that system than you realize.</p>
+
+                    <div class="blog-neuroclarity-cta">
+                        <h3>Introducing the NeuroClarity Solution</h3>
+                        <p>Based on 32 years of clinical experience and the principles discussed in this article, I've created a complete 30-day brain health protocol targeting memory, focus, and cognitive clarity.</p>
+                        <p>The NeuroClarity Solution includes:</p>
+                        <ul>
+                            <li>Five practitioner-grade supplements for optimal brain function</li>
+                            <li>1:1 consultation to personalize your protocol</li>
+                            <li>Access to live Q&A sessions</li>
+                            <li>Private community support</li>
+                            <li><strong>FREE Health Assessment ($195 value) with purchase</strong></li>
+                        </ul>
+                        <p class="neuroclarity-guarantee">Regulate your nervous system—or you don't pay.</p>
+                        <a href="https://neuroclaritysolution.com" target="_blank" rel="noopener" class="btn-primary">Learn More About NeuroClarity</a>
+                    </div>
+
+                    <div class="blog-community-note">
+                        <h3>Join the WellPath Community</h3>
+                        <p>This article is based on a live Brain Health session about memory and learning from the WellPath Community. Members get access to weekly Q&A sessions, educational workshops, the Five Pillars of Brain Health guide, and ongoing support from Dr. Butler.</p>
+                        <p>Topics include brain health, memory optimization, hormone balance, chronic pain management, and nutrition strategies—all designed to help you become an informed steward of your own health.</p>
+                        <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/home" target="_blank" rel="noopener" class="btn-secondary">Explore the Community</a>
+                    </div>
+
+                    <div class="blog-cta">
+                        <h3>Ready for Personalized Support?</h3>
+                        <p>If you want one-on-one guidance to identify what's disrupting your memory and create a personalized treatment plan, let's talk. Call or text to schedule a consultation.</p>
+                        <a href="tel:9737057800" class="btn-primary">Call or Text: (973) 705-7800</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="../practice.html">Our Practice</a></li>
+                        <li><a href="../approach.html">Dr. Butler's Approach</a></li>
+                        <li><a href="../services-overview.html">Services Overview</a></li>
+                        <li><a href="../insurance.html">Insurance Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../acupuncture.html">Acupuncture</a></li>
+                        <li><a href="../functional-medicine.html">Functional Medicine</a></li>
+                        <li><a href="../telemedicine.html">Telemedicine</a></li>
+                        <li><a href="../book-acupuncture.html">Schedule Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Community & Resources</h4>
+                    <ul>
+                        <li><a href="../wellpath-community.html">WellPath Community</a></li>
+                        <li><a href="../products.html">Professional Supplements</a></li>
+                        <li><a href="../wellpath-center.html">Clinic Overview</a></li>
+                        <li><a href="../contact.html">Contact & Directions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p class="footer-address">301 North Ave East<br>Cranford, NJ 07016</p>
+                    <p class="footer-phone"><a href="tel:9737057800">(973) 705-7800</a></p>
+                    <p class="footer-schedule">Tuesdays & Thursdays</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61553314182225" target="_blank" rel="noopener" aria-label="Facebook" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/drchristopherbutler/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/Christo60823838" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p>&copy; 2025 Dr. Christopher Butler. All rights reserved.</p>
+                <div style="margin-top: 0.5rem;">
+                    <a href="../terms.html" style="color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 0.5rem; font-size: 0.8rem;">Terms & Conditions</a>
+                    <a href="../privacy.html" style="color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 0.5rem; font-size: 0.8rem;">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
