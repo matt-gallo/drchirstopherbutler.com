@@ -14,7 +14,12 @@
     <header class="header">
         <div class="container">
             <div class="logo">Dr. Christopher Butler</div>
-            <nav class="nav">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
                 <a href="index.html#services">Services</a>
                 <a href="wellpath-center.html">Clinic</a>
                 <a href="wellpath-community.html">Community</a>
@@ -101,5 +106,25 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>

@@ -3,12 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insurance & Billing | Dr. Christopher Butler</title>
-    <meta name="description" content="Insurance information for Butler Acupuncture Center. Learn what plans we accept and how to verify benefits.">
+    <title>Order Confirmed | Dr. Christopher Butler</title>
+    <meta name="description" content="Your order has been successfully placed. Thank you for your purchase.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .success-container {
+            max-width: 600px;
+            margin: 4rem auto;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: #27ae60;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .success-icon svg {
+            width: 48px;
+            height: 48px;
+            color: white;
+        }
+
+        .success-title {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .success-message {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .success-details {
+            background: var(--bg-tan);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .success-details h3 {
+            font-family: var(--font-serif);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .success-details p {
+            color: var(--text-medium);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        .success-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.875rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-tan);
+        }
+    </style>
 </head>
 <body class="subpage">
     <header class="header">
@@ -30,58 +126,36 @@
         </div>
     </header>
 
-    <section class="subpage-hero">
-        <div class="container">
-            <p class="eyebrow">Insurance & Billing</p>
-            <h1>Simple insurance verification</h1>
-            <p class="lead">We’re in-network with major carriers and can run benefits checks before your visit so there are no surprises.</p>
-        </div>
-    </section>
-
     <section class="subpage-section">
         <div class="container">
-            <div class="feature-grid">
-                <article class="feature-card">
-                    <h3>Plans we accept</h3>
-                    <ul class="insight-list">
-                        <li>Cigna</li>
-                        <li>Blue Cross Blue Shield</li>
-                        <li>Aetna</li>
-                        <li>United Healthcare</li>
-                    </ul>
-                    <p class="insight-note">Coverage varies by plan; verification required.</p>
-                </article>
-                <article class="feature-card">
-                    <h3>What to send us</h3>
-                    <p>Email or text the following at least 48 hours before your visit:</p>
-                    <ul class="list-check">
-                        <li>Photo of your insurance card (front/back)</li>
-                        <li>Date of birth</li>
-                        <li>Reason for visit</li>
-                    </ul>
-                </article>
-                <article class="feature-card">
-                    <h3>Out-of-network & cash</h3>
-                    <p>We provide superbills for out-of-network reimbursement and accept HSA/FSA payments for acupuncture services.</p>
-                </article>
-            </div>
-        </div>
-    </section>
+            <div class="success-container">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
 
-    <section class="subpage-section light">
-        <div class="container">
-            <div class="split-grid">
-                <div>
-                    <h2>Send your documents</h2>
-                    <div class="section-divider" style="margin-left: 0;"></div>
-                    <p>Email: <a href="mailto:chris@wellpathcenter.com">chris@wellpathcenter.com</a><br>Phone/Text: <a href="tel:9737057800">(973) 705-7800</a></p>
-                    <p>We’ll confirm benefits, copays, and any limits before you step into the clinic.</p>
+                <h1 class="success-title">Order Confirmed!</h1>
+
+                <p class="success-message">
+                    Thank you for your purchase. Your order has been successfully placed and payment confirmed.
+                </p>
+
+                <div class="success-details">
+                    <h3>What Happens Next?</h3>
+                    <p><strong>1. Email Confirmation:</strong> You'll receive an order confirmation email shortly with your receipt and order details.</p>
+                    <p><strong>2. Shipping:</strong> Your products will be carefully packaged and shipped to the address you provided. You'll receive tracking information once your order ships.</p>
+                    <p><strong>3. Questions?</strong> If you have any questions about your order, please don't hesitate to contact us.</p>
                 </div>
-                <div class="feature-card">
-                    <h3>Need clarity?</h3>
-                    <p>Unsure if acupuncture or telemedicine is covered? Contact us and we’ll walk through the options.</p>
-                    <a href="contact.html" class="btn-secondary" style="display: inline-block; margin-top: 1rem;">Contact the Clinic</a>
+
+                <div class="success-actions">
+                    <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+                    <a href="index.html" class="btn btn-secondary">Return Home</a>
                 </div>
+
+                <p style="margin-top: 2rem; color: var(--text-light); font-size: 0.9rem;">
+                    Need help? <a href="contact.html" style="color: var(--primary);">Contact us</a> or call <a href="tel:9737057800" style="color: var(--primary);">(973) 705-7800</a>
+                </p>
             </div>
         </div>
     </section>
@@ -132,6 +206,19 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Clear cart after successful purchase
+        localStorage.removeItem('shoppingCart');
+
+        // Optional: Extract session ID from URL for tracking
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+        if (sessionId) {
+            console.log('Stripe session ID:', sessionId);
+            // You can send this to your backend for order tracking
+        }
+    </script>
 
     <script>
         // Mobile menu toggle functionality

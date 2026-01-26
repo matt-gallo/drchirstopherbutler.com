@@ -529,7 +529,12 @@
     <header class="header">
         <div class="container">
             <div class="logo">Dr. Christopher Butler</div>
-            <nav class="nav">
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
                 <a href="index.html#services">Services</a>
                 <a href="wellpath-center.html">Clinic</a>
                 <a href="wellpath-community.html">Community</a>
@@ -917,6 +922,28 @@
     </button>
 
     <script>
+        // GHL Product ID Mapping
+        const GHL_PRODUCT_MAP = {
+            'NeuroClarity Solution': null, // External link
+            'Cold Quell (CQ)': '6972821219699facdbf65b8d',
+            'Vitamin D3': '6972821219699f0ba4f65b8e',
+            'Isatis Gold': '6972821219699fdedbf65b8f',
+            'Clear Air': '6972821219699f5101f65b90',
+            'Clear Phlegm': '6972821219699f20f7f65b91',
+            'Fragrant Passage': '6972821219699f23b6f65b92',
+            'Huang Lian Jie Ou': '6972821219699f4e24f65b93',
+            'Immune Assist': '6972821219699f235ff65b94',
+            'Bi Yan Ling': '6972821219699f1876f65b95',
+            'X-Viromin': '6972821219699fef18f65b96',
+            'Bi Yan Pian': '6972821219699f02eef65b97',
+            'Gan Mao Ling': '6972821219699f54e4f65b98'
+        };
+
+        const GHL_CONFIG = {
+            apiKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjb21wYW55X2lkIjoiaHpIckdEYUkzV1VDbEJRNldIUUUiLCJ2ZXJzaW9uIjoxLCJpYXQiOjE3NjkxMTQ2OTI3NjEsInN1YiI6Im5Iekc1eUxHZ3NoWldFNDhPRWx5In0.lQ3mEuqmAGw5e95tWIclXyBX_yW8t0cKWlDU0XC8_rY',
+            locationId: 'MsoeghK7h7k7098rgLJx'
+        };
+
         // Shopping Cart Management
         class ShoppingCart {
             constructor() {
@@ -964,12 +991,16 @@
             }
 
             addToCart(card) {
+                const productName = card.querySelector('.product-name').textContent;
+                const ghlProductId = GHL_PRODUCT_MAP[productName];
+
                 const product = {
                     id: Date.now(),
-                    name: card.querySelector('.product-name').textContent,
+                    name: productName,
                     brand: card.querySelector('.product-brand').textContent,
                     price: card.querySelector('.product-price').textContent.split(' ')[0].replace('$', ''),
-                    image: card.querySelector('.product-image img')?.src || ''
+                    image: card.querySelector('.product-image img')?.src || '',
+                    ghlProductId: ghlProductId
                 };
 
                 this.items.push(product);
@@ -1067,15 +1098,70 @@
                 return saved ? JSON.parse(saved) : [];
             }
 
-            checkout() {
-                // TODO: Replace with your actual GHL checkout URL
-                // You'll need to configure this with your GHL product IDs
-                alert('To complete the GHL integration:\n\n1. Create products in GHL Product Catalog\n2. Get product IDs for each item\n3. Replace the checkout() function with GHL redirect URL\n\nFor now, here are your cart items:\n\n' +
-                    this.items.map(item => `${item.name} - $${item.price}`).join('\n'));
+            async checkout() {
+                if (this.items.length === 0) {
+                    alert('Your cart is empty!');
+                    return;
+                }
 
-                // Example GHL checkout redirect:
-                // const productIds = this.items.map(item => item.ghlProductId).join(',');
-                // window.location.href = `https://yoursubdomain.gohighlevel.com/checkout?products=${productIds}`;
+                // Disable button during processing
+                const checkoutBtn = document.getElementById('checkoutButton');
+                checkoutBtn.disabled = true;
+                checkoutBtn.textContent = 'Processing...';
+
+                try {
+                    // Create invoice in GHL with agency key
+                    const invoiceData = await this.createGHLInvoice();
+
+                    if (invoiceData && invoiceData.success && invoiceData.paymentUrl) {
+                        // Clear cart and redirect to payment
+                        this.items = [];
+                        this.saveCart();
+                        window.location.href = invoiceData.paymentUrl;
+                    } else {
+                        throw new Error('Unable to create invoice');
+                    }
+                } catch (error) {
+                    console.error('Checkout error:', error);
+                    alert('Error Details:\n\n' + error.message + '\n\nPlease screenshot this and send to support.');
+                    checkoutBtn.disabled = false;
+                    checkoutBtn.textContent = 'Proceed to Checkout';
+                }
+            }
+
+            async createGHLInvoice() {
+                // Use backend API for Stripe checkout
+                const API_URL = window.location.hostname === 'localhost'
+                    ? 'http://localhost:3000'
+                    : 'https://your-production-domain.com'; // Update with your production domain
+
+                console.log('Creating Stripe checkout session:', this.items);
+
+                try {
+                    const response = await fetch(`${API_URL}/api/create-checkout-session`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ items: this.items })
+                    });
+
+                    const data = await response.json();
+                    console.log('Stripe API Response:', data);
+
+                    if (!response.ok) {
+                        console.error('API Error:', data);
+                        throw new Error(data.error || 'Failed to create checkout session');
+                    }
+
+                    return {
+                        success: data.success,
+                        paymentUrl: data.url
+                    };
+                } catch (error) {
+                    console.error('Stripe checkout error:', error);
+                    throw error;
+                }
             }
         }
 
@@ -1106,6 +1192,26 @@
         if (savedView === 'list') {
             listViewBtn.click();
         }
+    </script>
+
+    <script>
+        // Mobile menu toggle functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html>
