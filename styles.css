@@ -1893,6 +1893,27 @@ a:focus, button:focus {
     margin-top: var(--spacing-sm);
 }
 
+.blog-author {
+    background: var(--bg-light);
+    border-radius: 12px;
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    border: 1px solid var(--border);
+}
+
+.blog-author h3 {
+    font-size: 1.5rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-dark);
+}
+
+.blog-author p {
+    font-size: 1rem;
+    color: var(--text-medium);
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
 /* Responsive blog styles */
 @media (max-width: 768px) {
     .blog-post-header {
