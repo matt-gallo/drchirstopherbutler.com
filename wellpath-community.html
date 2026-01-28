@@ -13,13 +13,20 @@
         .fellowship-hero {
             background: linear-gradient(135deg, #f8f4ee, #ffffff);
             padding: 5rem 0 3rem;
-            text-align: center;
+        }
+        .fellowship-hero .section-eyebrow,
+        .fellowship-hero h1,
+        .fellowship-hero .lead,
+        .fellowship-hero .hero-cta,
+        .fellowship-hero .hero-testimonial {
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .fellowship-hero .lead {
-            max-width: 760px;
-            margin: 1rem auto 2rem;
             font-size: 1.1rem;
             line-height: 1.6;
+            margin-bottom: 2rem;
         }
         .hero-testimonial {
             background: #fff;
@@ -150,8 +157,27 @@
             border: 1px solid rgba(44,95,45,0.15);
             padding: 1.5rem;
         }
+        .hero-cta { justify-content: flex-start; }
+        .hero-testimonial { text-align: left; }
+        .section-header,
+        .hero-testimonial,
+        .fellowship-hero h1,
+        .fellowship-hero p,
+        .fellowship-hero span,
+        .fellowship-card,
+        .inclusion-card,
+        .impact-card,
+        .testimonial,
+        .fit-card,
+        .promise-block,
+        .faq-card {
+            text-align: left;
+        }
+        .section-header .section-divider { margin-left: 0; }
         @media (max-width: 768px) {
             .fellowship-hero { padding: 3rem 0 2rem; }
+            .hero-cta { flex-direction: column; align-items: flex-start; }
+            .hero-cta a { width: 100%; text-align: center; }
         }
     </style>
 </head>
