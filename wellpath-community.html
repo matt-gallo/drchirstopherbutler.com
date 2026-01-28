@@ -4,11 +4,156 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WellPath Community | Dr. Christopher Butler</title>
-    <meta name="description" content="WellPath Community is Dr. Butler's private hub for education, accountability, and access between visits. Join at community.drchristopherbutler.com.">
+    <meta name="description" content="WellPath Fellowship is Dr. Butler's private community for direct access, education, and accountability between visits.">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .fellowship-hero {
+            background: linear-gradient(135deg, #f8f4ee, #ffffff);
+            padding: 5rem 0 3rem;
+            text-align: center;
+        }
+        .fellowship-hero .lead {
+            max-width: 760px;
+            margin: 1rem auto 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .hero-testimonial {
+            background: #fff;
+            border: 1px solid rgba(44, 95, 45, 0.15);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem auto 0;
+            max-width: 620px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+        .hero-testimonial p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .section-eyebrow {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #8c6d3f;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+        .fellowship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .fellowship-card {
+            background: #fff;
+            border-radius: 18px;
+            border: 1px solid rgba(44,95,45,0.12);
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .pillar-section {
+            background: #152015;
+            color: #fff;
+            padding: 4rem 0;
+        }
+        .pillar-section h2 { color: #fff; }
+        .pillar-section .fellowship-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: none;
+        }
+        .inclusions {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .inclusion-card {
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid rgba(44,95,45,0.15);
+            padding: 1.5rem;
+        }
+        .inclusion-card span {
+            display: block;
+            font-weight: 600;
+            color: #8c6d3f;
+            margin-bottom: 0.35rem;
+        }
+        .impact-grid {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        .impact-card {
+            border-radius: 14px;
+            background: #f8f4ee;
+            padding: 1.5rem;
+        }
+        .impact-card strong {
+            display: block;
+            color: #2c5f2d;
+            margin-bottom: 0.5rem;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .testimonial {
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid rgba(44,95,45,0.15);
+            padding: 1.75rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+        }
+        .testimonial cite {
+            display: block;
+            margin-top: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            color: #2c5f2d;
+        }
+        .fit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .fit-card {
+            background: #fdfaf6;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.08);
+            padding: 1.5rem;
+        }
+        .promise-block {
+            margin-top: 3rem;
+            background: #f4ede2;
+            border-radius: 18px;
+            border: 1px solid rgba(44,95,45,0.2);
+            padding: 2.5rem;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+        .faq-card {
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid rgba(44,95,45,0.15);
+            padding: 1.5rem;
+        }
+        @media (max-width: 768px) {
+            .fellowship-hero { padding: 3rem 0 2rem; }
+        }
+    </style>
 </head>
 <body class="subpage">
     <header class="header">
@@ -46,28 +191,18 @@
         </div>
     </header>
 
-    <section class="subpage-hero">
+    <section class="fellowship-hero">
         <div class="container">
-            <p class="eyebrow">Health Sovereignty Community</p>
-            <h1>Understand your body well enough to lead yourself</h1>
-            <p class="lead">This isn’t a fan club or a content dump. It’s where people learn to read their own signals, ask better questions, and make grounded decisions without outsourcing every choice.</p>
+            <span class="section-eyebrow">WellPath Fellowship</span>
+            <h1>Your home base for confident, sovereign healthcare</h1>
+            <p class="lead">Direct access to Dr. Butler, grounded teachings, and a circle of people who ask better questions about their bodies. The Fellowship is where you can message your doctor, learn protocols that actually work, and feel steadier when something unexpected comes up.</p>
             <div class="hero-cta">
-                <a href="https://community.drchristopherbutler.com" class="btn-primary" target="_blank" rel="noopener">Enter the Community</a>
+                <a href="https://community.drchristopherbutler.com" class="btn-primary" target="_blank" rel="noopener">Join the Fellowship</a>
                 <a href="contact.html" class="btn-secondary">Talk with the Clinic</a>
             </div>
-            <div class="hero-stats">
-                <div class="hero-stat">
-                    <span class="stat-number">Guided lessons</span>
-                    <p>Calm, plain-language education on brain health, hormones, inflammation, sleep, and more.</p>
-                </div>
-                <div class="hero-stat">
-                    <span class="stat-number">Live sessions</span>
-                    <p>Weekly teaching rounds with real questions, not motivational talks.</p>
-                </div>
-                <div class="hero-stat">
-                    <span class="stat-number">Context first</span>
-                    <p>Every recommendation is framed as an option with clear rationale.</p>
-                </div>
+            <div class="hero-testimonial">
+                <p>“I’m not treated like a case number here. I can ask a question on a Tuesday night, get context on Wednesday, and know exactly how to help my nervous system settle.”</p>
+                <strong>— J. Alvarez, WellPath member</strong>
             </div>
         </div>
     </section>
@@ -75,144 +210,104 @@
     <section class="subpage-section">
         <div class="container">
             <div class="section-header">
-                <h2>What this community really is</h2>
+                <h2>You’ve outgrown rushed appointments</h2>
                 <div class="section-divider"></div>
-                <p class="lead">A living classroom for people who want to stop chasing hacks and start understanding how their body actually works.</p>
+                <p class="lead">If you’re tired of being told “labs look fine” while your body says otherwise, you’re in the right place.</p>
             </div>
-            <div class="feature-grid">
-                <article class="feature-card">
-                    <h3>No hype, no theatrics</h3>
-                    <p>Your body isn’t broken. Your symptoms are signals. We teach you how to interpret them without fear.</p>
+            <div class="fellowship-grid">
+                <article class="fellowship-card">
+                    <h3>The real problem</h3>
+                    <p>Conventional systems weren’t designed for personal agency. You’re left stitching together advice from strangers and hoping it fits your biology.</p>
                 </article>
-                <article class="feature-card">
-                    <h3>Education that restores agency</h3>
-                    <p>Physiology explained in real language so you can make decisions with confidence instead of blindly complying—or rebelling.</p>
-                </article>
-                <article class="feature-card">
-                    <h3>Conversation, not noise</h3>
-                    <p>Calm, intelligent discussions where thoughtful questions get thoughtful answers.</p>
+                <article class="fellowship-card">
+                    <h3>What you actually need</h3>
+                    <p>A doctor who respects your intuition, structured education that explains physiology, and a like-minded community reminding you you’re not extreme—you’re discerning.</p>
                 </article>
             </div>
         </div>
     </section>
 
-    <section class="subpage-section light">
+    <section class="pillar-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Who it’s for</h2>
-                <div class="section-divider"></div>
-                <p class="lead">People who want clarity more than comfort.</p>
-            </div>
-            <div class="feature-grid">
-                <article class="feature-card">
-                    <h3>Systems thinkers</h3>
-                    <p>Those who know symptoms aren’t isolated events and want to see how stress, hormones, gut, and brain interact.</p>
+            <span class="section-eyebrow">Imagine if you had...</span>
+            <h2>Daily access to a physician who thinks like you do</h2>
+            <div class="fellowship-grid" style="margin-top: 2.5rem;">
+                <article class="fellowship-card">
+                    <h3>A doctor you trust</h3>
+                    <p>Direct contact with Dr. Butler between visits. Ask nuanced questions and get thoughtful responses within hours.</p>
                 </article>
-                <article class="feature-card">
-                    <h3>Discerners</h3>
-                    <p>People who prefer education and context before committing to protocols, supplements, or testing.</p>
+                <article class="fellowship-card">
+                    <h3>Protocols that work</h3>
+                    <p>Seasonal protocols, dosage guidance, and lab interpretation explained in context—no more random PDFs gathering dust.</p>
                 </article>
-                <article class="feature-card">
-                    <h3>Builders of healthspan</h3>
-                    <p>Members who care about how they function decades from now—mentally, hormonally, cognitively.</p>
+                <article class="fellowship-card">
+                    <h3>Live clinical education</h3>
+                    <p>Weekly office hours and workshops where members think out loud, troubleshoot cases, and learn how to self-govern.</p>
                 </article>
-            </div>
-            <p class="lead" style="margin-top: 2rem;">Most members arrive confused, inflamed, anxious, or burned out. They stay because clarity replaces chaos.</p>
-        </div>
-    </section>
-
-    <section class="subpage-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>What actually happens inside</h2>
-                <div class="section-divider"></div>
-                <p class="lead">Think teaching rounds and organized resources—not motivational posts.</p>
-            </div>
-            <div class="feature-grid">
-                <article class="feature-card">
-                    <h3>Ongoing education</h3>
-                    <p>Topics include brain health, hormones, inflammation, blood sugar, stress, sleep, nutrition, fertility, and recovery.</p>
-                </article>
-                <article class="feature-card">
-                    <h3>Weekly live sessions</h3>
-                    <p>Real-time Q&A with nuanced answers so members can think out loud and get direction.</p>
-                </article>
-                <article class="feature-card">
-                    <h3>Intentionally built library</h3>
-                    <p>Resources are organized by concern, added slowly and correctly so the signal stays clear.</p>
-                </article>
-                <article class="feature-card">
-                    <h3>Context before recommendations</h3>
-                    <p>Every option—supplements, lifestyle shifts, testing—is presented with the why, not just the what.</p>
+                <article class="fellowship-card">
+                    <h3>The right people</h3>
+                    <p>A respectful community of people reclaiming their authority, so you’re never the “crazy one” for wanting better care.</p>
                 </article>
             </div>
-        </div>
-    </section>
-
-    <section class="subpage-section light">
-        <div class="container">
-            <div class="split-grid">
-                <div>
-                    <div class="section-header" style="text-align: left;">
-                        <h2>What makes this different</h2>
-                        <div class="section-divider" style="margin-left: 0;"></div>
-                        <p class="lead">This isn't a calculated business venture. It's the natural extension of a way of life practiced since before most "health influencers" discovered the space.</p>
-                    </div>
-                    <p>Dr. Butler has lived outside the mainstream medical system his entire life—since his teens. This isn't about jumping on a trend in his 40s or monetizing the latest wellness movement. It's about sharing what he's genuinely lived: raising his family with home births and midwives, questioning vaccines before it was trendy, understanding herbs by touching and tasting them for decades.</p>
-                    <p>Everything here is built to restore agency—not create dependency. Members don't just collect protocols; they develop discernment, better questions, and more trust in their own judgment.</p>
-                    <ul class="list-check">
-                        <li>Education that explains physiology instead of parroting scripts</li>
-                        <li>Recommendations framed as options with context, never commandments</li>
-                        <li>Respectful tone so people can think out loud without performative noise</li>
-                        <li>Real support from someone who's walked this path his entire life</li>
-                        <li>A reference point you can return to before appointments, tests, or big decisions</li>
-                    </ul>
-                </div>
-                <div class="feature-card">
-                    <h3>Built for every season of care</h3>
-                    <p>Whether you're arriving foggy, anxious, inflamed, or simply curious, the community meets you where you are and grows alongside you. This is a living community with weekly live Q&As and ongoing support—not an automated course or content dump.</p>
-                    <p style="margin-top: 1rem;"><span class="info-pill">Hosted on Skool</span></p>
-                </div>
-            </div>
+            <p style="margin-top: 2rem; text-align: center; font-size: 1.1rem;">That’s the WellPath Fellowship.</p>
         </div>
     </section>
 
     <section class="subpage-section">
         <div class="container">
             <div class="section-header">
-                <h2>How to join</h2>
+                <h2>What’s inside the Fellowship</h2>
                 <div class="section-divider"></div>
-                <p class="lead">Clarity beats friction. Follow the steps below and you’ll be inside within a few minutes.</p>
+                <p class="lead">Think of this like a membership for your health sovereignty. Some weeks you lean on it daily, others you simply listen in and know support is there.</p>
             </div>
-            <ul class="step-list">
-                <li>
-                    <span class="step-number">1</span>
-                    <div>
-                        <strong>Visit the portal</strong>
-                        <p>Head to <a href="https://community.drchristopherbutler.com" target="_blank" rel="noopener">community.drchristopherbutler.com</a> and create your profile.</p>
-                    </div>
-                </li>
-                <li>
-                    <span class="step-number">2</span>
-                    <div>
-                        <strong>Choose the track that fits</strong>
-                        <p>Pick the path that matches your season—onboarding, alumni, or practitioner ally.</p>
-                    </div>
-                </li>
-                <li>
-                    <span class="step-number">3</span>
-                    <div>
-                        <strong>Introduce yourself</strong>
-                        <p>Share what you’re working through so the team can point you to relevant threads, lessons, and live calls.</p>
-                    </div>
-                </li>
-            </ul>
-            <div class="cta-panel">
-                <h3>Need help choosing a track?</h3>
-                <p>Contact the clinic and we’ll walk you through access, billing, or how the community fits inside your care plan.</p>
-                <div class="hero-cta" style="justify-content: center;">
-                    <a href="https://community.drchristopherbutler.com" class="btn-primary" target="_blank" rel="noopener">Go to WellPath Community</a>
-                    <a href="tel:9737057800" class="btn-secondary">Call (973) 705-7800</a>
+            <div class="inclusions">
+                <article class="inclusion-card">
+                    <span>Inclusion 01</span>
+                    <h3>Direct messages with Dr. Butler</h3>
+                    <p>Submit questions inside the portal and get clear, contextual answers—often the same day.</p>
+                </article>
+                <article class="inclusion-card">
+                    <span>Inclusion 02</span>
+                    <h3>Drop-in office hours</h3>
+                    <p>Live Zoom Q&A twice each week. Bring labs, symptoms, or decisions you’re weighing.</p>
+                </article>
+                <article class="inclusion-card">
+                    <span>Inclusion 03</span>
+                    <h3>Seasonal protocols</h3>
+                    <p>Immune, nervous system, detox, hormone, and metabolic templates you can adapt safely.</p>
+                </article>
+                <article class="inclusion-card">
+                    <span>Inclusion 04</span>
+                    <h3>Monthly deep-dive workshops</h3>
+                    <p>Live trainings on topics like detox pathways, men’s hormone repair, and vaccine injury recovery.</p>
+                </article>
+                <article class="inclusion-card">
+                    <span>Inclusion 05</span>
+                    <h3>Organized library</h3>
+                    <p>Lessons that explain physiology before recommendations so you can reason for yourself.</p>
+                </article>
+                <article class="inclusion-card">
+                    <span>Inclusion 06</span>
+                    <h3>Community accountability</h3>
+                    <p>Threads dedicated to wins, case studies, and practice so you integrate what you learn.</p>
+                </article>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <strong>Answers within hours</strong>
+                    <p>No ticketing queue. Hear from Dr. Butler or a licensed guide the same day in most cases.</p>
+                </div>
+                <div class="impact-card">
+                    <strong>Protocols that translate</strong>
+                    <p>Everything is laid out with dosage ranges, contraindications, and “start here” instructions.</p>
+                </div>
+                <div class="impact-card">
+                    <strong>Calm when things flare</strong>
+                    <p>Use office hours and messaging when symptoms spike so you’re never spiraling alone.</p>
+                </div>
+                <div class="impact-card">
+                    <strong>Belonging</strong>
+                    <p>People who choose informed consent, midwives, homesteads, and sovereignty—finally in one place.</p>
                 </div>
             </div>
         </div>
@@ -221,16 +316,85 @@
     <section class="subpage-section light">
         <div class="container">
             <div class="section-header">
-                <h2>Already a member?</h2>
+                <h2>Member snapshots</h2>
                 <div class="section-divider"></div>
-                <p class="lead">Use the login link below or bookmark the standalone portal. Everything syncs to the clinic for continuity.</p>
+                <p class="lead">Real families using the Fellowship in radically different seasons.</p>
             </div>
-            <div class="community-feed-placeholder" style="max-width: 720px; margin: 0 auto;">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-                </svg>
-                <p>When you have an embed code or activity feed, drop it in here. Until then, tap below to open the live community.</p>
-                <a href="https://community.drchristopherbutler.com" target="_blank" rel="noopener" style="margin-top: 1rem; display: inline-block;">Launch WellPath Community</a>
+            <div class="testimonial-grid">
+                <article class="testimonial">
+                    <p>“Other doctors dismissed my mold history. Inside WellPath I had a plan within 48 hours and a place to process the fear without judgment.”</p>
+                    <cite>— L. Rivera</cite>
+                </article>
+                <article class="testimonial">
+                    <p>“My husband and I joined before anything was ‘wrong’. When stress hit our home, we already had formulas, tools, and a doctor on speed dial.”</p>
+                    <cite>— L. Patel</cite>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="subpage-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Is this for you?</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="fit-grid">
+                <article class="fit-card">
+                    <h3>Your body is stable</h3>
+                    <p>You want a trusted doctor on deck, education before crises, and a place to sanity-check choices.</p>
+                </article>
+                <article class="fit-card">
+                    <h3>You’re in the weeds</h3>
+                    <p>Whether it’s long-haul recovery, recurring infections, or hormones that won’t cooperate, you need consistent direction.</p>
+                </article>
+                <article class="fit-card">
+                    <h3>You’re tired of doing this alone</h3>
+                    <p>Friends think you’re extreme, practitioners brush you off, and you crave peers pursuing sovereignty.</p>
+                </article>
+            </div>
+            <div class="promise-block">
+                <h3>Dr. Butler’s promise</h3>
+                <p>There are no 30-day guarantees. But when you’re in the Fellowship, you will be met with honesty, data, and options. You’ll be reminded that your intuition matters, while gaining access to three decades of clinical experience and ancestral wisdom. I’ll show up for your family like I do for my own.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="subpage-section light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Common questions</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="faq-grid">
+                <article class="faq-card">
+                    <h3>Is the Fellowship virtual?</h3>
+                    <p>Yes. Members join from all over the world. If you need hands-on care, we coordinate intensives through the Cranford clinic.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>What’s the commitment?</h3>
+                    <p>It’s month-to-month. You can cancel anytime, though most stay because they value how steady they feel with support.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>How much time will it take?</h3>
+                    <p>Use it like a gym membership. Some months you’ll be in every call, others you’ll lurk, catch replays, and revisit protocols.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>Is this different from clinic care?</h3>
+                    <p>Clinic work is for complex cases needing private treatment plans. The Fellowship is for ongoing guidance, protocols, and community.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>What happens when I join?</h3>
+                    <p>You’ll get instant access to the Skool portal, orientation path, and live call calendar. Introduce yourself and we’ll point you to the right threads.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>Can I expense this?</h3>
+                    <p>Many members use HSA/FSA funds. We’ll provide receipts and documentation if your plan requires it.</p>
+                </article>
+            </div>
+            <div class="hero-cta" style="margin-top: 2rem;">
+                <a href="https://community.drchristopherbutler.com" class="btn-primary" target="_blank" rel="noopener">Enter the Fellowship</a>
+                <a href="tel:9737057800" class="btn-secondary">Call (973) 705-7800</a>
             </div>
         </div>
     </section>
@@ -300,7 +464,6 @@
     </footer>
 
     <script>
-        // Mobile menu toggle functionality
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
         const mainNav = document.getElementById('mainNav');
 
@@ -309,7 +472,6 @@
             mainNav.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking on a link
         const navLinks = mainNav.querySelectorAll('a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
