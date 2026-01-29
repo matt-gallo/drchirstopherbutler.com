@@ -1,0 +1,10 @@
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "npx serve -p $PORT"
+
+[[redirects]]
+from = "http://*"
+to = "https://$host$request_uri"
+status = 301

@@ -1,0 +1,23 @@
+:{$PORT:8080} {
+	root * /app
+	encode gzip
+	file_server
+
+	# Handle clean URLs - try file, then .html extension, then directory, then 404
+	try_files {path} {path}.html {path}/index.html
+
+	# Security headers
+	header {
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		X-XSS-Protection "1; mode=block"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		-Server
+	}
+
+	# Logging to stdout for Railway
+	log {
+		output stdout
+		format console
+	}
+}
