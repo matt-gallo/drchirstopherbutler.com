@@ -1828,6 +1828,12 @@ a:focus, button:focus {
     color: var(--primary-dark);
 }
 
+.blog-content-wrapper .btn-primary,
+.blog-content-wrapper .btn-primary:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
 .blog-neuroclarity-cta {
     background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
     border-radius: 12px;
