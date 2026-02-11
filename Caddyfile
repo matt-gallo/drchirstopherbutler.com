@@ -2,17 +2,17 @@
 	bind 0.0.0.0
 	root * /app
 	encode gzip
+
+	# Route chrisbutleracupuncture.com root to book-acupuncture.html
+	@chrisbutler_root {
+		host chrisbutleracupuncture.com
+		path /
+	}
+	rewrite @chrisbutler_root /book-acupuncture.html
+
 	file_server
 
-	# Route chrisbutleracupuncture.com to wellpath-center.html
-	@chrisbutler host chrisbutleracupuncture.com
-	handle @chrisbutler {
-		# Serve wellpath-center.html for root path
-		rewrite / /wellpath-center.html
-		try_files {path} {path}.html {path}/index.html
-	}
-
-	# Handle clean URLs for all other domains
+	# Handle clean URLs - try file, then .html extension, then directory, then 404
 	try_files {path} {path}.html {path}/index.html
 
 	# Security headers
