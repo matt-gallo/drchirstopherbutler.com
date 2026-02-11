@@ -4,7 +4,15 @@
 	encode gzip
 	file_server
 
-	# Handle clean URLs - try file, then .html extension, then directory, then 404
+	# Route chrisbutleracupuncture.com to wellpath-center.html
+	@chrisbutler host chrisbutleracupuncture.com
+	handle @chrisbutler {
+		# Serve wellpath-center.html for root path
+		rewrite / /wellpath-center.html
+		try_files {path} {path}.html {path}/index.html
+	}
+
+	# Handle clean URLs for all other domains
 	try_files {path} {path}.html {path}/index.html
 
 	# Security headers
