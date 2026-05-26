@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellPath Community | Dr. Christopher Butler</title>
+    <meta name="description" content="WellPath Community is Dr. Butler's private hub for direct access, education, and accountability between visits.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .fellowship-hero {
+            background: linear-gradient(135deg, #f8f4ee, #ffffff);
+            padding: 5rem 0 3rem;
+        }
+        .fellowship-hero .section-eyebrow,
+        .fellowship-hero h1,
+        .fellowship-hero .lead,
+        .fellowship-hero .hero-cta,
+        .fellowship-hero .hero-testimonial {
+            max-width: 860px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .fellowship-hero .lead {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        .hero-testimonial {
+            background: #fff;
+            border: 1px solid rgba(44, 95, 45, 0.15);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem auto 0;
+            max-width: 620px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        }
+        .hero-testimonial p {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .section-eyebrow {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #8c6d3f;
+            display: inline-block;
+            margin-bottom: 0.75rem;
+        }
+        .fellowship-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .fellowship-card {
+            background: #fff;
+            border-radius: 18px;
+            border: 1px solid rgba(44,95,45,0.12);
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .pillar-section {
+            background: #152015;
+            color: #fff;
+            padding: 4rem 0;
+        }
+        .pillar-section h2 { color: #fff; }
+        .pillar-section .fellowship-card {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: none;
+        }
+        .inclusions {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.25rem;
+        }
+        .inclusion-card {
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid rgba(44,95,45,0.15);
+            padding: 1.5rem;
+        }
+        .inclusion-card span {
+            display: block;
+            font-weight: 600;
+            color: #8c6d3f;
+            margin-bottom: 0.35rem;
+        }
+        .impact-grid {
+            margin-top: 2.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        .impact-card {
+            border-radius: 14px;
+            background: #f8f4ee;
+            padding: 1.5rem;
+        }
+        .impact-card strong {
+            display: block;
+            color: #2c5f2d;
+            margin-bottom: 0.5rem;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .testimonial {
+            background: #fff;
+            border-radius: 16px;
+            border: 1px solid rgba(44,95,45,0.15);
+            padding: 1.75rem;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+        }
+        .testimonial cite {
+            display: block;
+            margin-top: 1rem;
+            font-style: normal;
+            font-weight: 600;
+            color: #2c5f2d;
+        }
+        .fit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        .fit-card {
+            background: #fdfaf6;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.08);
+            padding: 1.5rem;
+        }
+        .promise-block {
+            margin-top: 3rem;
+            background: #f4ede2;
+            border-radius: 18px;
+            border: 1px solid rgba(44,95,45,0.2);
+            padding: 2.5rem;
+        }
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+        .faq-card {
+            background: #fff;
+            border-radius: 14px;
+            border: 1px solid rgba(44,95,45,0.15);
+            padding: 1.5rem;
+        }
+        .hero-cta { justify-content: flex-start; gap: 0; }
+        .hero-testimonial { text-align: left; }
+        .section-header,
+        .hero-testimonial,
+        .fellowship-hero h1,
+        .fellowship-hero p,
+        .fellowship-hero span,
+        .fellowship-card,
+        .inclusion-card,
+        .impact-card,
+        .testimonial,
+        .fit-card,
+        .promise-block,
+        .faq-card {
+            text-align: left;
+        }
+        .section-header .section-divider { margin-left: 0; }
+        @media (max-width: 768px) {
+            .fellowship-hero { padding: 3rem 0 2rem; }
+            .hero-cta { flex-direction: column; align-items: flex-start; }
+            .hero-cta a { width: 100%; text-align: center; }
+        }
+    </style>
+</head>
+<body class="subpage">
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Dr. Christopher Butler</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
+                <a href="wellpath-community.html">Community</a>
+                <a href="blog.html">Blog</a>
+                <a href="products.html">Products</a>
+                <a href="https://chrisbutleracupuncture.com" target="_blank" rel="noopener">Work With Me</a>
+                <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/about" target="_blank" rel="noopener" class="btn-secondary-nav">Login</a>
+                <div class="mobile-menu-social">
+                    <a href="https://www.facebook.com/profile.php?id=61553314182225" target="_blank" rel="noopener" aria-label="Facebook" class="mobile-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/drchristopherbutler/" target="_blank" rel="noopener" aria-label="Instagram" class="mobile-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/Christo60823838" target="_blank" rel="noopener" aria-label="X (Twitter)" class="mobile-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="fellowship-hero">
+        <div class="container">
+            <span class="section-eyebrow">WellPath Community</span>
+            <h1>Your home base for confident, sovereign healthcare</h1>
+            <p class="lead">Direct access to Dr. Butler, grounded teachings, and a circle of people who ask better questions about their bodies. The community is where you can message your doctor, learn protocols that actually work, and feel steadier when something unexpected comes up.</p>
+            <div class="hero-cta">
+                <a href="https://community.drchristopherbutler.com" class="btn-primary" target="_blank" rel="noopener">Join Today</a>
+            </div>
+            <div class="hero-testimonial">
+                <p>“I felt super present with work and even with people—I wasn’t distracted like I usually am on my phone constantly.”</p>
+                <strong>— Matt, 34</strong>
+            </div>
+        </div>
+    </section>
+
+    <section class="subpage-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>You’ve outgrown rushed appointments</h2>
+                <div class="section-divider"></div>
+                <p class="lead">If you’re tired of being told “labs look fine” while your body says otherwise, you’re in the right place.</p>
+            </div>
+            <div class="fellowship-grid">
+                <article class="fellowship-card">
+                    <h3>The real problem</h3>
+                    <p>Conventional systems weren’t designed for personal agency. You’re left stitching together advice from strangers and hoping it fits your biology.</p>
+                </article>
+                <article class="fellowship-card">
+                    <h3>What you actually need</h3>
+                    <p>A doctor who respects your intuition, structured education that explains physiology, and a like-minded community reminding you you’re not extreme—you’re discerning.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="pillar-section">
+        <div class="container">
+            <span class="section-eyebrow">Imagine if you had...</span>
+            <h2>Daily access to a physician who thinks like you do</h2>
+            <div class="fellowship-grid" style="margin-top: 2.5rem;">
+                <article class="fellowship-card">
+                    <h3>A doctor you trust</h3>
+                    <p>Direct contact with Dr. Butler between visits. Ask nuanced questions and get thoughtful responses within hours.</p>
+                </article>
+                <article class="fellowship-card">
+                    <h3>Protocols that work</h3>
+                    <p>Seasonal protocols, dosage guidance, and lab interpretation explained in context—no more random PDFs gathering dust.</p>
+                </article>
+                <article class="fellowship-card">
+                    <h3>Live clinical education</h3>
+                    <p>Weekly office hours and workshops where members think out loud, troubleshoot cases, and learn how to self-govern.</p>
+                </article>
+                <article class="fellowship-card">
+                    <h3>The right people</h3>
+                    <p>A respectful community of people reclaiming their authority, so you’re never the “crazy one” for wanting better care.</p>
+                </article>
+            </div>
+            <p style="margin-top: 2rem; text-align: center; font-size: 1.1rem;">That’s the WellPath Community.</p>
+        </div>
+    </section>
+
+    <section class="subpage-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>What’s inside the Community</h2>
+                <div class="section-divider"></div>
+                <p class="lead">Think of this like a membership for your health sovereignty. Some weeks you lean on it daily, others you simply listen in and know support is there.</p>
+            </div>
+            <div class="inclusions">
+                <article class="inclusion-card">
+                    <span>Inclusion 01</span>
+                    <h3>Direct messages with Dr. Butler</h3>
+                    <p>Submit questions inside the portal and get clear, contextual answers—often the same day.</p>
+                </article>
+                <article class="inclusion-card">
+                    <span>Inclusion 02</span>
+                    <h3>Drop-in office hours</h3>
+                    <p>Live Zoom Q&A twice each week. Bring labs, symptoms, or decisions you’re weighing.</p>
+                </article>
+                <article class="inclusion-card">
+                    <span>Inclusion 03</span>
+                    <h3>Seasonal protocols</h3>
+                    <p>Immune, nervous system, detox, hormone, and metabolic templates you can adapt safely.</p>
+                </article>
+                <article class="inclusion-card">
+                    <span>Inclusion 04</span>
+                    <h3>Monthly deep-dive workshops</h3>
+                    <p>Live trainings on topics like detox pathways, men’s hormone repair, and vaccine injury recovery.</p>
+                </article>
+                <article class="inclusion-card">
+                    <span>Inclusion 05</span>
+                    <h3>Organized library</h3>
+                    <p>Lessons that explain physiology before recommendations so you can reason for yourself.</p>
+                </article>
+                <article class="inclusion-card">
+                    <span>Inclusion 06</span>
+                    <h3>Community accountability</h3>
+                    <p>Threads dedicated to wins, case studies, and practice so you integrate what you learn.</p>
+                </article>
+            </div>
+            <div class="impact-grid">
+                <div class="impact-card">
+                    <strong>Answers within hours</strong>
+                    <p>No ticketing queue. Hear from Dr. Butler or a licensed guide the same day in most cases.</p>
+                </div>
+                <div class="impact-card">
+                    <strong>Protocols that translate</strong>
+                    <p>Everything is laid out with dosage ranges, contraindications, and “start here” instructions.</p>
+                </div>
+                <div class="impact-card">
+                    <strong>Calm when things flare</strong>
+                    <p>Use office hours and messaging when symptoms spike so you’re never spiraling alone.</p>
+                </div>
+                <div class="impact-card">
+                    <strong>Belonging</strong>
+                    <p>People who choose informed consent, midwives, homesteads, and sovereignty—finally in one place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="subpage-section light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Member snapshots</h2>
+                <div class="section-divider"></div>
+                <p class="lead">Real families using the community in radically different seasons.</p>
+            </div>
+            <div class="testimonial-grid">
+                <article class="testimonial">
+                    <p>“I’m noticing slight improvements in my decision making and problem solving.”</p>
+                    <cite>— Anthony, case study participant</cite>
+                </article>
+                <article class="testimonial">
+                    <p>“I’m able to fall asleep within 30 to 60 minutes and replicate it daily—the consistency has been tremendous.”</p>
+                    <cite>— Member journal, Aug 19 2025</cite>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="subpage-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Is this for you?</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="fit-grid">
+                <article class="fit-card">
+                    <h3>Your body is stable</h3>
+                    <p>You want a trusted doctor on deck, education before crises, and a place to sanity-check choices.</p>
+                </article>
+                <article class="fit-card">
+                    <h3>You’re in the weeds</h3>
+                    <p>Whether it’s long-haul recovery, recurring infections, or hormones that won’t cooperate, you need consistent direction.</p>
+                </article>
+                <article class="fit-card">
+                    <h3>You’re tired of doing this alone</h3>
+                    <p>Friends think you’re extreme, practitioners brush you off, and you crave peers pursuing sovereignty.</p>
+                </article>
+            </div>
+            <div class="promise-block">
+                <h3>Dr. Butler’s promise</h3>
+                <p>There are no 30-day guarantees. But when you’re in the community, you will be met with honesty, data, and options. You’ll be reminded that your intuition matters, while gaining access to three decades of clinical experience and ancestral wisdom. I’ll show up for your family like I do for my own.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="subpage-section light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Common questions</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="faq-grid">
+                <article class="faq-card">
+                    <h3>Is the community virtual?</h3>
+                    <p>Yes. Members join from all over the world. If you need hands-on care, we coordinate intensives through the Cranford clinic.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>What’s the commitment?</h3>
+                    <p>It’s month-to-month. You can cancel anytime, though most stay because they value how steady they feel with support.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>How much time will it take?</h3>
+                    <p>Use it like a gym membership. Some months you’ll be in every call, others you’ll lurk, catch replays, and revisit protocols.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>Is this different from clinic care?</h3>
+                    <p>Clinic work is for complex cases needing private treatment plans. The community is for ongoing guidance, protocols, and belonging.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>What happens when I join?</h3>
+                    <p>You’ll get instant access to the Skool portal, orientation path, and live call calendar. Introduce yourself and we’ll point you to the right threads.</p>
+                </article>
+                <article class="faq-card">
+                    <h3>Can I expense this?</h3>
+                    <p>Many members use HSA/FSA funds. We’ll provide receipts and documentation if your plan requires it.</p>
+                </article>
+            </div>
+            <div class="hero-cta" style="margin-top: 2rem;">
+                <a href="https://community.drchristopherbutler.com" class="btn-primary" target="_blank" rel="noopener">Join Today</a>
+                <a href="tel:9737057800" class="btn-secondary">Call (973) 705-7800</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="practice.html">Our Practice</a></li>
+                        <li><a href="approach.html">Dr. Butler's Approach</a></li>
+                        <li><a href="services-overview.html">Services Overview</a></li>
+                        <li><a href="insurance.html">Insurance Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="acupuncture.html">Acupuncture</a></li>
+                        <li><a href="functional-medicine.html">Functional Medicine</a></li>
+                        <li><a href="telemedicine.html">Telemedicine</a></li>
+                        <li><a href="book-acupuncture.html">Schedule Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Community & Resources</h4>
+                    <ul>
+                        <li><a href="wellpath-community.html">WellPath Community</a></li>
+                        <li><a href="products.html">Professional Supplements</a></li>
+                        <li><a href="https://chrisbutleracupuncture.com">Clinic Overview</a></li>
+                        <li><a href="contact.html">Contact & Directions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p class="footer-address">301 North Ave East<br>Cranford, NJ 07016</p>
+                    <p class="footer-phone"><a href="tel:9737057800">(973) 705-7800</a></p>
+                    <p class="footer-schedule">Tuesdays & Thursdays</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61553314182225" target="_blank" rel="noopener" aria-label="Facebook" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/drchristopherbutler/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/Christo60823838" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p>&copy; 2025 Dr. Christopher Butler. All rights reserved.</p>
+                <div style="margin-top: 0.5rem;">
+                    <a href="terms.html" style="color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 0.5rem; font-size: 0.8rem;">Terms & Conditions</a>
+                    <a href="privacy.html" style="color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 0.5rem; font-size: 0.8rem;">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
+
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
+
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>

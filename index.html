@@ -1,865 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>How to Hack a Cold in Less Than Two Days | Dr. Chris Butler</title>
-<meta name="description" content="The clinic-tested protocols a 30-year practitioner uses to crush upper respiratory infections before they take you down for two weeks. Ebook + Masterclass + Resource Library for $19.97.">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
-
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --gold: #B8860B;
-    --gold-light: #D4A843;
-    --gold-dark: #8B6508;
-    --brown: #5C4A2A;
-    --brown-dark: #3D2E15;
-    --cream: #FDF8F0;
-    --cream-dark: #F5EDE0;
-    --warm-white: #FFFDF9;
-    --text: #3D2E15;
-    --text-light: #6B5B45;
-    --accent-bg: #F0E6D0;
-    --serif: 'Playfair Display', Georgia, serif;
-    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: var(--sans);
-    color: var(--text);
-    background: var(--warm-white);
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
-
-  /* ─── HERO ─── */
-  .hero {
-    background: linear-gradient(170deg, var(--cream) 0%, var(--cream-dark) 100%);
-    padding: 80px 0 60px;
-    text-align: center;
-    border-bottom: 3px solid var(--gold);
-  }
-
-  .hero-badge {
-    display: inline-block;
-    background: var(--gold);
-    color: #fff;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    padding: 6px 18px;
-    border-radius: 30px;
-    margin-bottom: 28px;
-  }
-
-  .hero h1 {
-    font-family: var(--serif);
-    font-size: clamp(2.2rem, 5vw, 3.4rem);
-    line-height: 1.15;
-    color: var(--brown-dark);
-    max-width: 750px;
-    margin: 0 auto 20px;
-  }
-
-  .hero-sub {
-    font-size: clamp(1rem, 2.2vw, 1.2rem);
-    color: var(--text-light);
-    max-width: 640px;
-    margin: 0 auto 32px;
-    line-height: 1.7;
-  }
-
-  .hero-tags {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 36px;
-  }
-
-  .hero-tag {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--brown);
-    border: 1.5px solid var(--gold-light);
-    padding: 6px 14px;
-    border-radius: 4px;
-    background: rgba(184, 134, 11, 0.06);
-  }
-
-  .hero-price {
-    margin-bottom: 28px;
-  }
-
-  .hero-price .amount {
-    font-family: var(--serif);
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--gold-dark);
-  }
-
-  .hero-price .label {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    display: block;
-    margin-top: 2px;
-  }
-
-  .btn {
-    display: inline-block;
-    background: var(--gold);
-    color: #fff;
-    font-family: var(--sans);
-    font-size: 1.05rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    padding: 16px 48px;
-    border-radius: 6px;
-    text-decoration: none;
-    transition: all 0.25s ease;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 14px rgba(184, 134, 11, 0.3);
-  }
-
-  .btn:hover {
-    background: var(--gold-dark);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 20px rgba(184, 134, 11, 0.4);
-  }
-
-  .btn-sub {
-    display: block;
-    font-size: 0.8rem;
-    color: var(--text-light);
-    margin-top: 10px;
-    text-align: center;
-  }
-
-  /* ─── SECTIONS ─── */
-  section { padding: 70px 0; }
-
-  .section-dark {
-    background: var(--cream);
-  }
-
-  .section-gold {
-    background: var(--gold);
-    color: #fff;
-  }
-
-  .section-gold h2,
-  .section-gold p,
-  .section-gold li {
-    color: #fff;
-  }
-
-  h2 {
-    font-family: var(--serif);
-    font-size: clamp(1.8rem, 3.5vw, 2.4rem);
-    color: var(--brown-dark);
-    margin-bottom: 16px;
-    line-height: 1.25;
-  }
-
-  h3 {
-    font-family: var(--serif);
-    font-size: 1.3rem;
-    color: var(--brown-dark);
-    margin-bottom: 8px;
-  }
-
-  .section-lead {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    max-width: 680px;
-    margin-bottom: 40px;
-  }
-
-  .centered { text-align: center; }
-  .centered .section-lead { margin-left: auto; margin-right: auto; }
-
-  /* ─── PROBLEM SECTION ─── */
-  .problem-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-top: 36px;
-  }
-
-  .problem-card {
-    background: var(--warm-white);
-    border: 1px solid #E8DCC8;
-    border-radius: 8px;
-    padding: 28px;
-  }
-
-  .problem-card .icon {
-    font-size: 2rem;
-    margin-bottom: 12px;
-  }
-
-  .problem-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: 10px;
-  }
-
-  .problem-card p {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    line-height: 1.65;
-  }
-
-  /* ─── WHAT YOU GET ─── */
-  .offer-stack {
-    display: grid;
-    gap: 0;
-    margin-top: 36px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 2px solid var(--gold-light);
-  }
-
-  .offer-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 28px 32px;
-    border-bottom: 1px solid #E8DCC8;
-    background: var(--warm-white);
-  }
-
-  .offer-item:last-child { border-bottom: none; }
-
-  .offer-item:nth-child(even) {
-    background: var(--cream);
-  }
-
-  .offer-icon {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    background: var(--gold);
-    color: #fff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-top: 2px;
-  }
-
-  .offer-text h3 {
-    font-size: 1.1rem;
-    margin-bottom: 6px;
-    color: var(--brown-dark);
-  }
-
-  .offer-text p {
-    font-size: 0.93rem;
-    color: var(--text-light);
-    line-height: 1.6;
-  }
-
-  .offer-value {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--gold-dark);
-    background: rgba(184, 134, 11, 0.1);
-    padding: 2px 10px;
-    border-radius: 3px;
-    margin-top: 6px;
-  }
-
-  /* ─── INSIDE THE GUIDE ─── */
-  .guide-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 36px;
-  }
-
-  .guide-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 20px;
-    background: var(--cream);
-    border-radius: 8px;
-    border-left: 3px solid var(--gold);
-  }
-
-  .guide-item .num {
-    font-family: var(--serif);
-    font-size: 1.5rem;
-    color: var(--gold);
-    font-weight: 700;
-    line-height: 1;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .guide-item h4 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--brown-dark);
-    margin-bottom: 4px;
-  }
-
-  .guide-item p {
-    font-size: 0.88rem;
-    color: var(--text-light);
-    line-height: 1.55;
-  }
-
-  /* ─── ABOUT ─── */
-  .about-layout {
-    display: flex;
-    gap: 40px;
-    align-items: center;
-    margin-top: 36px;
-  }
-
-  .about-photo {
-    flex-shrink: 0;
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    background: var(--accent-bg);
-    border: 4px solid var(--gold-light);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--serif);
-    font-size: 3rem;
-    color: var(--gold);
-  }
-
-  .about-text h3 {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-  }
-
-  .about-text p {
-    font-size: 0.97rem;
-    color: var(--text-light);
-    margin-bottom: 12px;
-    line-height: 1.7;
-  }
-
-  .about-creds {
-    display: flex;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin-top: 14px;
-  }
-
-  .about-cred {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--brown);
-    background: var(--cream);
-    padding: 6px 14px;
-    border-radius: 4px;
-    border: 1px solid #E0D5C0;
-  }
-
-  /* ─── PRICE STACK CTA ─── */
-  .cta-section {
-    text-align: center;
-    padding: 70px 0 80px;
-    background: var(--brown-dark);
-    color: #fff;
-  }
-
-  .cta-section h2 {
-    color: #fff;
-    margin-bottom: 36px;
-  }
-
-  .price-stack {
-    max-width: 520px;
-    margin: 0 auto 40px;
-    text-align: left;
-  }
-
-  .price-line {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.12);
-    font-size: 1rem;
-  }
-
-  .price-line .item { color: rgba(255,255,255,0.85); }
-
-  .price-line .value {
-    color: rgba(255,255,255,0.5);
-    text-decoration: line-through;
-    font-size: 0.95rem;
-  }
-
-  .price-total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 0;
-    margin-top: 8px;
-    border-top: 2px solid var(--gold);
-  }
-
-  .price-total .item {
-    font-size: 1.15rem;
-    font-weight: 700;
-    color: #fff;
-  }
-
-  .price-total .value {
-    font-family: var(--serif);
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: var(--gold-light);
-  }
-
-  .cta-section .btn {
-    font-size: 1.15rem;
-    padding: 18px 56px;
-  }
-
-  .cta-guarantee {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.55);
-    margin-top: 16px;
-    max-width: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* ─── CARDINAL RULE ─── */
-  .callout-box {
-    background: var(--gold);
-    color: #fff;
-    border-radius: 10px;
-    padding: 32px 36px;
-    margin: 40px 0;
-    text-align: center;
-  }
-
-  .callout-box h3 {
-    color: #fff;
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-  }
-
-  .callout-box p {
-    color: rgba(255,255,255,0.9);
-    font-size: 1rem;
-    max-width: 560px;
-    margin: 0 auto;
-    line-height: 1.65;
-  }
-
-  /* ─── FAQ ─── */
-  .faq-list {
-    max-width: 700px;
-    margin: 36px auto 0;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid #E0D5C0;
-    padding: 22px 0;
-  }
-
-  .faq-q {
-    font-weight: 700;
-    font-size: 1.02rem;
-    color: var(--brown-dark);
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .faq-q::after {
-    content: '+';
-    font-size: 1.4rem;
-    color: var(--gold);
-    font-weight: 300;
-    transition: transform 0.2s;
-  }
-
-  .faq-item.open .faq-q::after {
-    content: '−';
-  }
-
-  .faq-a {
-    font-size: 0.95rem;
-    color: var(--text-light);
-    line-height: 1.7;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease, padding 0.3s ease;
-    padding-top: 0;
-  }
-
-  .faq-item.open .faq-a {
-    max-height: 300px;
-    padding-top: 14px;
-  }
-
-  /* ─── FOOTER ─── */
-  footer {
-    background: var(--brown-dark);
-    color: rgba(255,255,255,0.45);
-    text-align: center;
-    padding: 36px 24px;
-    font-size: 0.82rem;
-    line-height: 1.7;
-  }
-
-  footer a { color: var(--gold-light); text-decoration: none; }
-
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 768px) {
-    .hero { padding: 56px 0 44px; }
-
-    section { padding: 50px 0; }
-
-    .problem-grid,
-    .guide-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .about-layout {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .about-creds { justify-content: center; }
-
-    .offer-item {
-      flex-direction: column;
-      gap: 12px;
-      padding: 24px;
-    }
-
-    .price-stack { padding: 0 8px; }
-
-    .cta-section { padding: 50px 0 60px; }
-
-    .callout-box { padding: 24px 20px; }
-  }
-
-  @media (max-width: 480px) {
-    .hero h1 { font-size: 1.9rem; }
-    .hero-price .amount { font-size: 2.4rem; }
-    .btn { padding: 14px 36px; font-size: 1rem; }
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dr. Christopher Butler - Integrative Medicine, Acupuncture & Functional Health. Now accepting major insurance in Cranford, NJ.">
+    <title>Dr. Christopher Butler | Integrative Medicine & Acupuncture</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<!-- ═══════════ HERO ═══════════ -->
-<section class="hero">
-  <div class="container">
-    <span class="hero-badge">From Dr. Chris Butler</span>
-    <h1>How to Hack a Cold in Less Than Two Days</h1>
-    <p class="hero-sub">The clinic-tested protocols a 30-year practitioner uses to crush upper respiratory infections &mdash; before they take you down for two weeks.</p>
-
-    <div class="hero-tags">
-      <span class="hero-tag">30+ Years of Clinical Practice</span>
-      <span class="hero-tag">Hybrid Chinese &amp; Functional Medicine</span>
-      <span class="hero-tag">Actionable Protocols</span>
-    </div>
-
-    <div class="hero-price">
-      <span class="amount">$19.97</span>
-      <span class="label">One-time &mdash; instant access to the ebook, masterclass &amp; resource library</span>
-    </div>
-
-    <a href="https://link.clinicdragon.ai/payment-link/69e0ab88557558e89e520509" class="btn">Get Instant Access</a>
-    <span class="btn-sub">Ebook + Masterclass + Growing Resource Library</span>
-  </div>
-</section>
-
-<!-- ═══════════ PROBLEM ═══════════ -->
-<section class="section-dark">
-  <div class="container">
-    <h2>Why Most Cold Advice Falls Short</h2>
-    <p class="section-lead">You feel that scratch in your throat. You grab the NyQuil, the Zinc lozenges, the Vitamin C packets. Three days later you're still miserable. Sound familiar?</p>
-
-    <div class="problem-grid">
-      <div class="problem-card">
-        <div class="icon">💊</div>
-        <h3>OTC Medicines Only Mask Symptoms</h3>
-        <p>Every cold medicine on pharmacy shelves treats symptoms &mdash; none are designed to eradicate the virus itself. You feel slightly better while the infection deepens.</p>
-      </div>
-      <div class="problem-card">
-        <div class="icon">🍊</div>
-        <h3>Zinc &amp; Vitamin C Are Not Enough</h3>
-        <p>Both enhance general immunity, but do very little to knock out a cold that has already taken root. Once the virus is replicating, you need targeted intervention.</p>
-      </div>
-      <div class="problem-card">
-        <div class="icon">⏰</div>
-        <h3>Most People Dose Too Infrequently</h3>
-        <p>The standard 2&ndash;3 times per day dosing schedule that works for chronic conditions is completely inadequate for acute infections. That's why people say herbs "don't work."</p>
-      </div>
-      <div class="problem-card">
-        <div class="icon">🔬</div>
-        <h3>The Real Variable Is Your Immunity</h3>
-        <p>Viral severity has far more to do with the immunity of the person being infected than with any particular strain. The protocols in this guide address exactly that.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ WHAT YOU GET ═══════════ -->
-<section>
-  <div class="container centered">
-    <h2>Everything You Get for $19.97</h2>
-    <p class="section-lead">This isn't just an ebook. It's a complete system for taking control of your immune health &mdash; backed by three decades of clinical refinement.</p>
-
-    <div class="offer-stack">
-      <div class="offer-item">
-        <div class="offer-icon">📖</div>
-        <div class="offer-text">
-          <h3>The Complete Ebook &mdash; "How to Hack a Cold in Less Than Two Days"</h3>
-          <p>14 pages of practitioner-grade protocols. Exact herbal formulas, precise dosing schedules, symptom-by-symptom stacking guides, and a complete quick-reference table you can print and keep in your medicine cabinet.</p>
-          <span class="offer-value">Immediate Download</span>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Dr. Christopher Butler</a>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" id="mainNav">
+                <a href="wellpath-community.html">Community</a>
+                <a href="blog.html">Blog</a>
+                <a href="products.html">Products</a>
+                <a href="https://chrisbutleracupuncture.com" target="_blank" rel="noopener">Work With Me</a>
+                <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/about" target="_blank" rel="noopener" class="btn-secondary-nav">Login</a>
+                <div class="mobile-menu-social">
+                    <a href="https://www.facebook.com/profile.php?id=61553314182225" target="_blank" rel="noopener" aria-label="Facebook" class="mobile-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/drchristopherbutler/" target="_blank" rel="noopener" aria-label="Instagram" class="mobile-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/Christo60823838" target="_blank" rel="noopener" aria-label="X (Twitter)" class="mobile-social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+            </nav>
         </div>
-      </div>
-      <div class="offer-item">
-        <div class="offer-icon">🎬</div>
-        <div class="offer-text">
-          <h3>"How to Hack a Cold" Masterclass</h3>
-          <p>The full video companion to the ebook. Dr. Butler walks you through the protocols, explains the reasoning behind each formula, and shows you exactly how to implement the system from the moment symptoms appear.</p>
-          <span class="offer-value">Streaming Access</span>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-photo-bg"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-photo-spacer"></div>
+                <div class="hero-content">
+                    <h1>Learn to become the informed steward of your own health</h1>
+                    <p class="hero-subtitle">Join a community of people committed to health sovereignty—understanding your body, making informed decisions, and reclaiming agency over your well-being</p>
+                    <p class="hero-clinic-info">Weekly live Q&As, educational resources, and real support from someone who's lived this way his entire life.</p>
+                    <div class="hero-cta">
+                        <a href="wellpath-community.html" class="btn-primary">Join the Community</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="offer-item">
-        <div class="offer-icon">📚</div>
-        <div class="offer-text">
-          <h3>Health Sovereignty Resource Library</h3>
-          <p>A growing collection of guides, protocols, and educational resources covering immune health, nutrition, herbal medicine, and more. New content is added regularly &mdash; your access never expires.</p>
-          <span class="offer-value">Ongoing &amp; Growing</span>
+    </section>
+
+    <!-- Mobile Announcements Carousel (visible only on mobile) -->
+    <section class="mobile-announcements-carousel">
+        <div class="container">
+            <h3>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+                Announcements
+            </h3>
+            <div class="carousel-wrapper">
+                <div class="carousel-container" id="announcementCarousel">
+                    <div class="carousel-item">
+                        <span class="announcement-badge event">This Week</span>
+                        <h4>Weekly Community Q&A</h4>
+                        <p>Join Dr. Butler this Friday, January 30 at 2pm EST for live Q&A. Get your health questions answered in real time. Happening weekly every Friday!</p>
+                        <div class="announcement-date">
+                            <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/home" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none; font-weight: 500;">Join Community →</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <span class="announcement-badge event">Feb 6</span>
+                        <h4>Community Q&A Session</h4>
+                        <p>Live Q&A with Dr. Butler. Bring your health questions and get clear, practical answers.</p>
+                        <div class="announcement-date">
+                            February 6, 2025 • 2pm EST • <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/home" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none; font-weight: 500;">Join Community →</a>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <span class="announcement-badge new">Replay Available</span>
+                        <h4>Watch "How to Hack a Cold" + Get 10% Off</h4>
+                        <p>Join the community to watch the replay and get an exclusive code for 10% off supplements mentioned in the class, plus free shipping on orders over $150.</p>
+                        <div class="announcement-date">
+                            <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/home" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none; font-weight: 500;">Join & Get Code →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-dots" id="carouselDots"></div>
         </div>
-      </div>
-      <div class="offer-item">
-        <div class="offer-icon">👥</div>
-        <div class="offer-text">
-          <h3>Sovereign Health Collective Community</h3>
-          <p>Join a community of people serious about taking responsibility for their health. Weekly live Q&amp;A sessions with Dr. Butler, real human support, and a network of committed individuals doing the work.</p>
-          <span class="offer-value">Weekly Live Q&amp;A</span>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>This isn't just another health program</h2>
+                    <p class="about-lead">This is health sovereignty—a genuine, heart-forward approach to understanding your body and taking responsibility for your well-being. Not a calculated business venture, but a way of life I've practiced since my teens.</p>
+                    <div class="care-steps">
+                        <div class="care-step">
+                            <span class="step-label">01</span>
+                            <h3>Education over prescription</h3>
+                            <p>Learn to understand what your body is telling you, so you can make informed decisions instead of blindly following orders.</p>
+                        </div>
+                        <div class="care-step">
+                            <span class="step-label">02</span>
+                            <h3>Community support</h3>
+                            <p>Weekly Q&As, educational resources, and real human connection. This isn't an automated program—it's a living community.</p>
+                        </div>
+                        <div class="care-step">
+                            <span class="step-label">03</span>
+                            <h3>Show up and do the work</h3>
+                            <p>There's no magic pill. This is about daily commitment to chiseling away what doesn't serve you and building what does.</p>
+                        </div>
+                    </div>
+                    <p class="about-subtext">This is for people ready to create greatness in their lives—not just lose 10 pounds, but radically transform how they show up in the world.</p>
+                    <a href="wellpath-community.html" class="btn-primary">Join the Community</a>
+                </div>
+                <div class="about-photo">
+                    <div class="insight-card">
+                        <h3>Who this is for</h3>
+                        <p>People who are ready to:</p>
+                        <ul class="insight-list">
+                            <li>Take full responsibility for their health instead of blindly following medical systems</li>
+                            <li>Learn to understand their body's signals and make informed decisions</li>
+                            <li>Show up consistently and do the daily work required for transformation</li>
+                            <li>Join a community of others committed to health sovereignty</li>
+                            <li>Create lasting change, not just quick fixes</li>
+                        </ul>
+                        <p class="insight-note">This isn't about perfection. It's about showing up daily to chisel the statue—removing what doesn't serve you and uncovering who you're meant to be.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- ═══════════ CARDINAL RULE CALLOUT ═══════════ -->
-<div class="container">
-  <div class="callout-box">
-    <h3>The Cardinal Rule</h3>
-    <p>Every 2 hours. Not twice a day. Not three times a day. <strong>Every 2 hours.</strong> This single change in dosing frequency is what separates a 48-hour cold from a two-week ordeal.</p>
-  </div>
-</div>
-
-<!-- ═══════════ WHAT'S INSIDE ═══════════ -->
-<section class="section-dark">
-  <div class="container">
-    <h2>What's Inside the Guide</h2>
-    <p class="section-lead">From the biology of how viruses invade to the exact formulas and doses that stop them &mdash; everything you need in one clinical reference.</p>
-
-    <div class="guide-grid">
-      <div class="guide-item">
-        <span class="num">01</span>
-        <div>
-          <h4>How Viruses Invade &amp; Replicate</h4>
-          <p>Understand the 4-stage infection cycle so you know exactly where and when to intervene.</p>
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Services</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                            <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Acupuncture</h3>
+                    <p>Traditional Chinese medicine techniques for pain management, stress reduction, and overall wellness.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3>Functional Medicine</h3>
+                    <p>Comprehensive assessments to identify and address the underlying causes of chronic health conditions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Telemedicine</h3>
+                    <p>Convenient virtual consultations for ongoing care and health optimization guidance.</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="guide-item">
-        <span class="num">02</span>
-        <div>
-          <h4>The Foundational Four</h4>
-          <p>Sleep, hydration, rest from exercise, and dietary changes that create the substrate for recovery.</p>
+    </section>
+
+    <section class="clinic-info">
+        <div class="container">
+            <div class="clinic-card">
+                <div class="clinic-details">
+                    <h3>Work With Me 1-on-1</h3>
+                    <p class="clinic-schedule">In-person appointments in Cranford, NJ <strong>Tuesdays & Thursdays</strong></p>
+                    <p class="clinic-address">For those ready to commit to a process and do the work—not just show up expecting a quick fix.</p>
+                </div>
+                <div class="clinic-action">
+                    <p class="schedule-instructions">Call or text to discuss if this is right for you:</p>
+                    <a href="tel:9737057800" class="btn-primary">(973) 705-7800</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="guide-item">
-        <span class="num">03</span>
-        <div>
-          <h4>Why Herbal Medicine Outperforms Synthetics</h4>
-          <p>The phytochemical complexity that viruses cannot develop resistance to &mdash; unlike antibiotics.</p>
+    </section>
+
+    <section class="community" id="community">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sovereign Health Collective</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="community-content">
+                <div class="community-text">
+                    <p class="lead">A living community of people learning to take full responsibility for their health and well-being.</p>
+                    <p>This isn't just another online course or information dump. It's a genuine community where you get real support, live Q&As, and access to knowledge I've lived and practiced my entire life—not something I jumped into for a business opportunity.</p>
+                    <ul class="community-benefits">
+                        <li>Weekly live Q&A sessions with Dr. Butler</li>
+                        <li>Educational library on health sovereignty</li>
+                        <li>Real human support—not automated systems</li>
+                        <li>Community of committed individuals doing the work</li>
+                    </ul>
+                    <a href="https://community.drchristopherbutler.com" class="btn-primary" target="_blank">Join the Community</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="guide-item">
-        <span class="num">04</span>
-        <div>
-          <h4>Core Antiviral Formulas</h4>
-          <p>CQ, Isatis Gold, Gan Mao Ling, Yin Qiao San &mdash; which to use, when, and exact dosing.</p>
+    </section>
+
+    <section class="social-feed-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Follow Our Journey</h2>
+                <div class="section-divider"></div>
+                <p class="lead">Stay connected and get health insights from Dr. Butler's social media</p>
+            </div>
+            <div class="social-feed-container">
+                <!-- Elfsight Social Feed | Untitled Social Feed -->
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-c8540a00-06a7-4412-aa88-8aa99dca146b" data-elfsight-app-lazy></div>
+            </div>
         </div>
-      </div>
-      <div class="guide-item">
-        <span class="num">05</span>
-        <div>
-          <h4>Targeted Complication Protocols</h4>
-          <p>Specific formulas for sinus infections, bronchial coughs, ear infections, and asthma-prone presentations.</p>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get Started</h2>
+                <div class="section-divider"></div>
+            </div>
+            <div class="contact-content">
+                <div class="contact-card">
+                    <h3>Ready to transform your health?</h3>
+                    <p>Schedule your initial consultation today. We accept most major insurance plans for acupuncture and telemedicine services.</p>
+                    <div class="contact-methods">
+                        <a href="tel:9737057800" class="contact-method">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>(973) 705-7800</span>
+                        </a>
+                    </div>
+                    <p class="insurance-note">Insurance accepted: Cigna, Blue Cross Blue Shield, Aetna, United Healthcare (coverage varies by plan)</p>
+                    <div class="social-links-inline">
+                        <p style="font-size: 0.9rem; color: var(--text-medium); margin-bottom: 0.75rem;">Follow us:</p>
+                        <div style="display: flex; justify-content: center; gap: 1rem;">
+                            <a href="https://www.facebook.com/profile.php?id=61553314182225" target="_blank" rel="noopener" aria-label="Facebook" class="social-link-inline">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="https://www.instagram.com/drchristopherbutler/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link-inline">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                                </svg>
+                            </a>
+                            <a href="https://x.com/Christo60823838" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-link-inline">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="guide-item">
-        <span class="num">06</span>
-        <div>
-          <h4>Symptom-by-Symptom Stacking Guide</h4>
-          <p>Visual protocol maps showing exactly how to combine formulas based on your specific symptoms.</p>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="practice.html">Our Practice</a></li>
+                        <li><a href="approach.html">Dr. Butler's Approach</a></li>
+                        <li><a href="services-overview.html">Services Overview</a></li>
+                        <li><a href="insurance.html">Insurance Information</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="acupuncture.html">Acupuncture</a></li>
+                        <li><a href="functional-medicine.html">Functional Medicine</a></li>
+                        <li><a href="telemedicine.html">Telemedicine</a></li>
+                        <li><a href="book-acupuncture.html">Schedule Appointment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Community & Resources</h4>
+                    <ul>
+                        <li><a href="https://chrisbutleracupuncture.com">Clinic Overview</a></li>
+                        <li><a href="wellpath-community.html">WellPath Community</a></li>
+                        <li><a href="products.html">Professional Supplements</a></li>
+                        <li><a href="contact.html">Contact & Directions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <p class="footer-address">301 North Ave East<br>Cranford, NJ 07016</p>
+                    <p class="footer-phone"><a href="tel:9737057800">(973) 705-7800</a></p>
+                    <p class="footer-schedule">Tuesdays & Thursdays</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=61553314182225" target="_blank" rel="noopener" aria-label="Facebook" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/drchristopherbutler/" target="_blank" rel="noopener" aria-label="Instagram" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                        </svg>
+                    </a>
+                    <a href="https://x.com/Christo60823838" target="_blank" rel="noopener" aria-label="X (Twitter)" class="social-link">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                        </svg>
+                    </a>
+                </div>
+                <p>&copy; 2025 Dr. Christopher Butler. All rights reserved.</p>
+                <div style="margin-top: 0.5rem;">
+                    <a href="terms.html" style="color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 0.5rem; font-size: 0.8rem;">Terms & Conditions</a>
+                    <a href="privacy.html" style="color: rgba(255,255,255,0.6); text-decoration: none; margin: 0 0.5rem; font-size: 0.8rem;">Privacy Policy</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="guide-item">
-        <span class="num">07</span>
-        <div>
-          <h4>Preventive Foundations</h4>
-          <p>Vitamin D optimization, medicinal mushrooms, and daily immune maintenance to build viral resilience.</p>
+    </footer>
+
+    <!-- News & Updates Sidebar -->
+    <aside class="news-sidebar" id="newsSidebar">
+        <!-- Announcements Section -->
+        <div class="sidebar-section">
+            <div class="sidebar-header">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                </svg>
+                <h3>Announcements</h3>
+            </div>
+
+            <div class="announcement-item">
+                <span class="announcement-badge event">This Week</span>
+                <h4>Weekly Community Q&A</h4>
+                <p>Join Dr. Butler this Friday, January 30 at 2pm EST for live Q&A. Get your health questions answered in real time. Happening weekly every Friday!</p>
+                <div class="announcement-date">
+                    <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/home" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none; font-weight: 500;">Join Community →</a>
+                </div>
+            </div>
+
+            <div class="announcement-item">
+                <span class="announcement-badge event">Feb 6</span>
+                <h4>Community Q&A Session</h4>
+                <p>Live Q&A with Dr. Butler. Bring your health questions and get clear, practical answers.</p>
+                <div class="announcement-date">
+                    February 6, 2025 • 2pm EST • <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/home" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none; font-weight: 500;">Join Community →</a>
+                </div>
+            </div>
+
+            <div class="announcement-item">
+                <span class="announcement-badge new">Replay Available</span>
+                <h4>Watch "How to Hack a Cold" + Get 10% Off</h4>
+                <p>Join the community to watch the replay and get an exclusive code for 10% off supplements mentioned in the class, plus free shipping on orders over $150.</p>
+                <div class="announcement-date">
+                    <a href="https://community.drchristopherbutler.com/communities/groups/sovereign-health-collective/home" target="_blank" rel="noopener" style="color: var(--primary); text-decoration: none; font-weight: 500;">Join & Get Code →</a>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="guide-item">
-        <span class="num">08</span>
-        <div>
-          <h4>Quick-Reference Protocol Table</h4>
-          <p>Every formula, dose, source, and use case consolidated into one printable reference.</p>
+
+        <!-- Community Feed Section -->
+        <div class="sidebar-section">
+            <div class="sidebar-header">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                    <circle cx="9" cy="7" r="4"/>
+                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                    <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+                <h3>Community Feed</h3>
+            </div>
+
+            <!-- Placeholder - Replace with embed code when available -->
+            <div class="community-feed-placeholder" id="communityFeedPlaceholder">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+                <p>Join the conversation in the<br><a href="https://community.drchristopherbutler.com" target="_blank">WellPath Community</a></p>
+            </div>
+
+            <!-- Community feed embed goes here when available -->
+            <!-- <div class="community-feed-embed">
+                PASTE YOUR COMMUNITY EMBED CODE HERE
+            </div> -->
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </aside>
 
-<!-- ═══════════ ABOUT DR. BUTLER ═══════════ -->
-<section>
-  <div class="container">
-    <div class="about-layout">
-      <div class="about-photo">CB</div>
-      <div class="about-text">
-        <h3>Dr. Chris Butler</h3>
-        <p>Since 1993, Dr. Butler has practiced a hybrid of Chinese Medicine and Western Functional Medicine. The protocols in this guide represent over three decades of clinical refinement &mdash; methods that have worked consistently for patients dealing with everything from simple rhinovirus colds to COVID and influenza.</p>
-        <p>They are not experimental. They are not theoretical. They are clinic-tested, repeatedly proven, and available to anyone willing to act quickly and dose correctly.</p>
-        <div class="about-creds">
-          <span class="about-cred">30+ Years Clinical Practice</span>
-          <span class="about-cred">Chinese &amp; Functional Medicine</span>
-          <span class="about-cred">Cranford, NJ</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="toggleIcon">
+            <path d="M9 18l6-6-6-6"/>
+        </svg>
+    </button>
 
-<!-- ═══════════ PRICE STACK CTA ═══════════ -->
-<section class="cta-section">
-  <div class="container">
-    <h2>Get Everything for One Simple Price</h2>
+    <script>
+        // Sidebar toggle functionality
+        const sidebar = document.getElementById('newsSidebar');
+        const toggle = document.getElementById('sidebarToggle');
+        const toggleIcon = document.getElementById('toggleIcon');
 
-    <div class="price-stack">
-      <div class="price-line">
-        <span class="item">The Complete Ebook (14-page clinical guide)</span>
-        <span class="value">$19</span>
-      </div>
-      <div class="price-line">
-        <span class="item">"How to Hack a Cold" Masterclass</span>
-        <span class="value">$47</span>
-      </div>
-      <div class="price-line">
-        <span class="item">Health Sovereignty Resource Library</span>
-        <span class="value">$29</span>
-      </div>
-      <div class="price-line">
-        <span class="item">Sovereign Health Collective Community</span>
-        <span class="value">$19/mo</span>
-      </div>
-      <div class="price-total">
-        <span class="item">Your Price Today</span>
-        <span class="value">$19.97</span>
-      </div>
-    </div>
+        // Start with sidebar open on desktop
+        if (window.innerWidth > 1200) {
+            document.body.classList.add('sidebar-open');
+        }
 
-    <a href="https://link.clinicdragon.ai/payment-link/69e0ab88557558e89e520509" class="btn">Get Instant Access &mdash; $19.97</a>
-    <p class="cta-guarantee">One-time payment. Instant access. No subscription required.</p>
-  </div>
-</section>
+        toggle.addEventListener('click', function() {
+            sidebar.classList.toggle('collapsed');
+            toggle.classList.toggle('collapsed');
+            document.body.classList.toggle('sidebar-open');
 
-<!-- ═══════════ FAQ ═══════════ -->
-<section>
-  <div class="container centered">
-    <h2>Common Questions</h2>
+            // Rotate icon
+            if (sidebar.classList.contains('collapsed')) {
+                toggleIcon.innerHTML = '<path d="M15 18l-6-6 6-6"/>';
+            } else {
+                toggleIcon.innerHTML = '<path d="M9 18l6-6-6-6"/>';
+            }
+        });
 
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">What exactly do I get for $19.97?</div>
-        <div class="faq-a">You get instant access to the full 14-page ebook, the accompanying video masterclass, the growing health sovereignty resource library, and membership in the Sovereign Health Collective community with weekly live Q&amp;A sessions.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Is this a subscription?</div>
-        <div class="faq-a">No. It's a one-time payment of $19.97. You get access to everything listed above with no recurring charges.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Who is this guide for?</div>
-        <div class="faq-a">Anyone who wants to take a more proactive, informed approach to dealing with colds and upper respiratory infections. The protocols are designed for otherwise healthy adults. If you have recurring complications, Dr. Butler recommends working with a Functional Medicine practitioner to address root causes.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Are these protocols safe?</div>
-        <div class="faq-a">The formulas recommended are commercially available herbal medicines with long histories of safe use. That said, individual immune function, prior antibiotic history, dietary baseline, and chronic health conditions all influence outcomes. This guide is educational &mdash; not a substitute for personalized medical advice.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">How is this different from what I can find online?</div>
-        <div class="faq-a">Most online cold advice revolves around Zinc, Vitamin C, and rest. This guide goes far deeper &mdash; covering targeted herbal formulas, precise every-2-hour dosing protocols, and symptom-specific stacking strategies refined over 30+ years of clinical practice. It's the difference between general wellness tips and a practitioner's actual treatment playbook.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">Can I work with Dr. Butler directly?</div>
-        <div class="faq-a">Yes. Dr. Butler sees patients in person in Cranford, NJ on Tuesdays and Thursdays. You can reach his office at (973) 705-7800 to start a conversation about whether it's a good fit.</div>
-      </div>
-    </div>
-  </div>
-</section>
+        // Mobile menu toggle functionality
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mainNav = document.getElementById('mainNav');
 
-<!-- ═══════════ FINAL CTA ═══════════ -->
-<section class="section-gold" style="text-align: center; padding: 56px 0;">
-  <div class="container">
-    <h2 style="font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 12px;">Stop Losing Two Weeks to Every Cold</h2>
-    <p style="max-width: 520px; margin: 0 auto 28px; opacity: 0.9; font-size: 1.05rem;">The tools are available. The protocols are proven. The only variable is whether you act.</p>
-    <a href="https://link.clinicdragon.ai/payment-link/69e0ab88557558e89e520509" class="btn" style="background: #fff; color: var(--gold-dark);">Get the Guide &mdash; $19.97</a>
-  </div>
-</section>
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileMenuToggle.classList.toggle('active');
+            mainNav.classList.toggle('active');
+        });
 
-<!-- ═══════════ FOOTER ═══════════ -->
-<footer>
-  <div class="container">
-    <p>&copy; 2025 Dr. Chris Butler &middot; NeuroClarity Solution Protocol</p>
-    <p style="margin-top: 8px;">This guide is for educational purposes only and is not intended as medical advice. Always consult with a qualified healthcare provider regarding any health concerns.</p>
-  </div>
-</footer>
+        // Close mobile menu when clicking on a link
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        });
 
-<!-- ═══════════ FAQ TOGGLE SCRIPT ═══════════ -->
-<script>
-  document.querySelectorAll('.faq-q').forEach(function(q) {
-    q.addEventListener('click', function() {
-      this.parentElement.classList.toggle('open');
-    });
-  });
-</script>
+        // Announcement Carousel functionality
+        const carousel = document.getElementById('announcementCarousel');
+        const dotsContainer = document.getElementById('carouselDots');
 
+        if (carousel && dotsContainer) {
+            const items = carousel.querySelectorAll('.carousel-item');
+
+            // Create dots
+            items.forEach((item, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('carousel-dot');
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => {
+                    carousel.scrollTo({
+                        left: item.offsetLeft,
+                        behavior: 'smooth'
+                    });
+                });
+                dotsContainer.appendChild(dot);
+            });
+
+            // Update active dot on scroll
+            carousel.addEventListener('scroll', () => {
+                const scrollPosition = carousel.scrollLeft;
+                const itemWidth = items[0].offsetWidth;
+                const gap = 16; // 1rem gap
+                const activeIndex = Math.round(scrollPosition / (itemWidth + gap));
+
+                document.querySelectorAll('.carousel-dot').forEach((dot, index) => {
+                    dot.classList.toggle('active', index === activeIndex);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
