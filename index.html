@@ -113,21 +113,28 @@
                 <div class="about-text">
                     <h2>This isn't just another health program</h2>
                     <p class="about-lead">This is health sovereignty—a genuine, heart-forward approach to understanding your body and taking responsibility for your well-being. Not a calculated business venture, but a way of life I've practiced since my teens.</p>
-                    <div class="care-steps">
-                        <div class="care-step">
-                            <span class="step-label">01</span>
-                            <h3>Education over prescription</h3>
-                            <p>Learn to understand what your body is telling you, so you can make informed decisions instead of blindly following orders.</p>
+                    <div class="care-carousel" data-care-carousel>
+                        <div class="care-track">
+                            <div class="care-step">
+                                <span class="step-label">01</span>
+                                <h3>Education over prescription</h3>
+                                <p>Learn to understand what your body is telling you, so you can make informed decisions instead of blindly following orders.</p>
+                            </div>
+                            <div class="care-step">
+                                <span class="step-label">02</span>
+                                <h3>Community support</h3>
+                                <p>Weekly Q&As, educational resources, and real human connection. This isn't an automated program—it's a living community.</p>
+                            </div>
+                            <div class="care-step">
+                                <span class="step-label">03</span>
+                                <h3>Show up and do the work</h3>
+                                <p>There's no magic pill. This is about daily commitment to chiseling away what doesn't serve you and building what does.</p>
+                            </div>
                         </div>
-                        <div class="care-step">
-                            <span class="step-label">02</span>
-                            <h3>Community support</h3>
-                            <p>Weekly Q&As, educational resources, and real human connection. This isn't an automated program—it's a living community.</p>
-                        </div>
-                        <div class="care-step">
-                            <span class="step-label">03</span>
-                            <h3>Show up and do the work</h3>
-                            <p>There's no magic pill. This is about daily commitment to chiseling away what doesn't serve you and building what does.</p>
+                        <div class="care-dots" role="tablist" aria-label="Approach steps">
+                            <button type="button" class="care-dot active" data-care-dot="0" aria-label="Step 1" aria-selected="true"></button>
+                            <button type="button" class="care-dot" data-care-dot="1" aria-label="Step 2" aria-selected="false"></button>
+                            <button type="button" class="care-dot" data-care-dot="2" aria-label="Step 3" aria-selected="false"></button>
                         </div>
                     </div>
                     <p class="about-subtext">This is for people ready to create greatness in their lives—not just lose 10 pounds, but radically transform how they show up in the world.</p>
@@ -503,6 +510,59 @@
                 });
             });
         }
+
+        // Care steps carousel — auto-rotates every 6 seconds, pauses on hover, restarts on click.
+        (function initCareCarousel() {
+            const roots = document.querySelectorAll('[data-care-carousel]');
+            const ROTATION_MS = 6000;
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            roots.forEach(root => {
+                const track = root.querySelector('.care-track');
+                const slides = root.querySelectorAll('.care-step');
+                const dots = root.querySelectorAll('.care-dot');
+                if (!track || slides.length === 0) return;
+
+                let idx = 0;
+                let timer = null;
+
+                function render() {
+                    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+                    dots.forEach((d, i) => {
+                        const active = i === idx;
+                        d.classList.toggle('active', active);
+                        d.setAttribute('aria-selected', active ? 'true' : 'false');
+                    });
+                }
+
+                function go(n) {
+                    idx = ((n % slides.length) + slides.length) % slides.length;
+                    render();
+                }
+
+                function start() {
+                    if (reduceMotion) return;
+                    stop();
+                    timer = setInterval(() => go(idx + 1), ROTATION_MS);
+                }
+
+                function stop() {
+                    if (timer) { clearInterval(timer); timer = null; }
+                }
+
+                dots.forEach((d, i) => {
+                    d.addEventListener('click', () => { go(i); start(); });
+                });
+
+                root.addEventListener('mouseenter', stop);
+                root.addEventListener('mouseleave', start);
+                root.addEventListener('focusin', stop);
+                root.addEventListener('focusout', start);
+
+                render();
+                start();
+            });
+        })();
     </script>
 </body>
 </html>

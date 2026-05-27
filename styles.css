@@ -347,6 +347,63 @@ section {
     margin-bottom: var(--spacing-md);
 }
 
+/* Care steps carousel (auto-rotating 3-step slideshow) */
+.care-carousel {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+    border-radius: 12px;
+}
+
+.care-track {
+    display: flex;
+    transition: transform 0.6s ease;
+    will-change: transform;
+}
+
+.care-carousel .care-step {
+    flex: 0 0 100%;
+    box-sizing: border-box;
+}
+
+.care-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.care-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.care-dot:hover {
+    background: var(--text-light);
+}
+
+.care-dot.active {
+    background: var(--primary);
+    transform: scale(1.25);
+}
+
+.care-dot:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .care-track {
+        transition: none;
+    }
+}
+
 .care-step {
     background: white;
     border: 1px solid var(--border);
