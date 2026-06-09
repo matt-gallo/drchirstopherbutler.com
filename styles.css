@@ -1702,6 +1702,163 @@ a:focus, button:focus {
    ================================ */
 
 /* Blog listing page */
+/* ===== Redesigned blog index ===== */
+.blog-index {
+    background: var(--bg-cream);
+}
+
+.blog-tag {
+    display: inline-block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: var(--bg-tan);
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    margin-bottom: 1rem;
+}
+
+/* Featured card */
+.blog-feature-card {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 18px 50px rgba(44, 95, 45, 0.10);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    margin-bottom: var(--spacing-lg);
+}
+
+.blog-feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 28px 64px rgba(44, 95, 45, 0.16);
+}
+
+.blog-feature-image {
+    background-size: cover;
+    background-position: center;
+    min-height: 360px;
+}
+
+.blog-feature-body {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.blog-feature-body h2 {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    line-height: 1.15;
+    color: var(--primary-dark);
+    margin: 0 0 1rem;
+}
+
+.blog-feature-body p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-medium);
+    margin: 0 0 1.25rem;
+}
+
+/* Card grid */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(44, 95, 45, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 48px rgba(44, 95, 45, 0.14);
+}
+
+.blog-card-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-card-body {
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.blog-card-body h3 {
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
+    line-height: 1.25;
+    color: var(--primary-dark);
+    margin: 0 0 0.75rem;
+}
+
+.blog-card-body p {
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--text-medium);
+    margin: 0 0 1.25rem;
+    flex: 1;
+}
+
+.blog-card-foot {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+}
+
+.blog-card-byline {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.blog-card-dot {
+    color: var(--border);
+}
+
+@media (max-width: 768px) {
+    .blog-feature-card {
+        grid-template-columns: 1fr;
+    }
+    .blog-feature-image {
+        min-height: 220px;
+    }
+    .blog-feature-body {
+        padding: var(--spacing-md);
+    }
+    .blog-feature-body h2 {
+        font-size: 1.75rem;
+    }
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .blog-card-meta {
     display: flex;
     flex-wrap: wrap;
@@ -1762,6 +1919,25 @@ a:focus, button:focus {
     border-bottom: 1px solid var(--border);
 }
 
+.blog-hero-image {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto var(--spacing-lg);
+    aspect-ratio: 16 / 7;
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    box-shadow: 0 18px 50px rgba(44, 95, 45, 0.14);
+}
+
+@media (max-width: 768px) {
+    .blog-hero-image {
+        aspect-ratio: 16 / 10;
+        border-radius: 12px;
+        margin-bottom: var(--spacing-md);
+    }
+}
+
 .blog-meta {
     display: flex;
     justify-content: space-between;
@@ -1817,7 +1993,7 @@ a:focus, button:focus {
 }
 
 .blog-post-content {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-md) 0 var(--spacing-xl);
 }
 
 .blog-content-wrapper {
