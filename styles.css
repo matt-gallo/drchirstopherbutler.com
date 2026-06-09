@@ -1684,10 +1684,29 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Accessibility */
-a:focus, button:focus {
-    outline: 2px solid var(--primary);
-    outline-offset: 2px;
+/* Accessibility — keyboard focus rings (only for keyboard, not mouse) */
+a:focus-visible,
+button:focus-visible,
+.blog-card:focus-visible,
+.blog-feature-card:focus-visible,
+.service-card:focus-visible,
+.tilt-card:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* Cards get a soft lift on focus too, matching their hover */
+.blog-card:focus-visible,
+.blog-feature-card:focus-visible {
+    box-shadow: 0 22px 48px rgba(44, 95, 45, 0.18);
+}
+
+/* Suppress the legacy mouse-click outline now that focus-visible handles keyboard */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
 }
 
 /* Print Styles */
@@ -2450,4 +2469,69 @@ a:focus, button:focus {
 @media (prefers-reduced-motion: reduce) {
     [data-reveal] { opacity: 1; transform: none; transition: none; }
     .split-reveal .sr-word { transform: none; animation: none; }
+}
+
+/* ============================================================
+   FAQ accordion (native <details>, accessible, brand-styled)
+   ============================================================ */
+.faq-section {
+    background: var(--bg-cream);
+}
+.faq-accordion {
+    max-width: 760px;
+    margin: var(--spacing-lg) auto 0;
+}
+.faq-accordion details {
+    background: var(--bg-white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin-bottom: var(--spacing-sm);
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.faq-accordion details[open] {
+    border-color: var(--accent);
+    box-shadow: 0 12px 30px rgba(44, 95, 45, 0.08);
+}
+.faq-accordion summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1.25rem 1.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+.faq-accordion summary::-webkit-details-marker { display: none; }
+.faq-accordion summary::after {
+    content: "+";
+    flex-shrink: 0;
+    font-family: var(--font-sans);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--accent);
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+.faq-accordion details[open] summary::after {
+    transform: rotate(45deg);
+}
+.faq-accordion .faq-answer {
+    padding: 0 1.5rem 1.35rem;
+    color: var(--text-medium);
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+.faq-accordion summary:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: -3px;
+    border-radius: 12px;
+}
+@media (max-width: 768px) {
+    .faq-accordion summary { font-size: 1.1rem; padding: 1.1rem 1.25rem; }
+    .faq-accordion .faq-answer { padding: 0 1.25rem 1.15rem; font-size: 1rem; }
 }
