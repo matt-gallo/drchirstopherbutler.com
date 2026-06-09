@@ -2687,3 +2687,15 @@ button:focus:not(:focus-visible) {
     .faq-entry summary { font-size: 1.05rem; padding: 1rem 1.15rem; }
     .faq-entry .faq-answer { padding: 0 1.15rem 1.1rem; font-size: 0.98rem; }
 }
+
+/* FAQ "see all" link under homepage teaser */
+.faq-more {
+    text-align: center;
+    margin-top: var(--spacing-md);
+    font-size: 1.1rem;
+    color: var(--text-medium);
+}
+.faq-more a {
+    color: var(--primary);
+    font-weight: 600;
+}
