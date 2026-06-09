@@ -53,7 +53,7 @@
             <div class="hero-grid">
                 <div class="hero-photo-spacer"></div>
                 <div class="hero-content">
-                    <h1>Learn to become the informed steward of your own health</h1>
+                    <h1 class="split-reveal">Learn to become the informed steward of your own health</h1>
                     <p class="hero-subtitle">Join a community of people committed to health sovereignty—understanding your body, making informed decisions, and reclaiming agency over your well-being</p>
                     <p class="hero-clinic-info">Weekly live Q&As, educational resources, and real support from someone who's lived this way his entire life.</p>
                     <div class="hero-cta">
@@ -160,12 +160,12 @@
 
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-reveal>
                 <h2>Services</h2>
                 <div class="section-divider"></div>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card tilt-card" data-reveal>
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M12 2L2 7l10 5 10-5-10-5z"/>
@@ -175,7 +175,7 @@
                     <h3>Acupuncture</h3>
                     <p>Traditional Chinese medicine techniques for pain management, stress reduction, and overall wellness.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card tilt-card" data-reveal data-reveal-delay="120">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <circle cx="12" cy="12" r="10"/>
@@ -185,7 +185,7 @@
                     <h3>Functional Medicine</h3>
                     <p>Comprehensive assessments to identify and address the underlying causes of chronic health conditions.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card tilt-card" data-reveal data-reveal-delay="240">
                     <div class="service-icon">
                         <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
                             <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
@@ -219,7 +219,7 @@
 
     <section class="community" id="community">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-reveal>
                 <h2>Sovereign Health Collective</h2>
                 <div class="section-divider"></div>
             </div>
@@ -241,7 +241,7 @@
 
     <section class="social-feed-section">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-reveal>
                 <h2>Follow Our Journey</h2>
                 <div class="section-divider"></div>
                 <p class="lead">Stay connected and get health insights from Dr. Butler's social media</p>
@@ -256,7 +256,7 @@
 
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-header">
+            <div class="section-header" data-reveal>
                 <h2>Get Started</h2>
                 <div class="section-divider"></div>
             </div>
@@ -564,5 +564,6 @@
             });
         })();
     </script>
+    <script src="effects.js" defer></script>
 </body>
 </html>

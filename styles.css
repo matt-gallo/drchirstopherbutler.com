@@ -2360,3 +2360,94 @@ a:focus, button:focus {
         grid-template-columns: 1fr;
     }
 }
+
+/* ============================================================
+   Site-wide micro-interactions (brand-aligned)
+   Paired with effects.js
+   ============================================================ */
+
+/* Scroll reveal */
+[data-reveal] {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1),
+                transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: opacity, transform;
+}
+[data-reveal].reveal-in {
+    opacity: 1;
+    transform: none;
+}
+
+/* Split reveal headings */
+.split-reveal .sr-mask {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: top;
+    padding-bottom: 0.08em;
+}
+.split-reveal .sr-word {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: srRise 0.85s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@keyframes srRise {
+    to { transform: translateY(0); }
+}
+
+/* Animated underline links */
+.link-underline {
+    position: relative;
+    text-decoration: none;
+}
+.link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.35s cubic-bezier(0.6, 0.1, 0.1, 1);
+}
+.link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Stat counters */
+.stat-band {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-md);
+    text-align: center;
+}
+.stat-item .stat-number {
+    font-family: var(--font-serif);
+    font-size: 3.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    line-height: 1;
+}
+.stat-item .stat-label {
+    display: block;
+    margin-top: 0.5rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--text-medium);
+    letter-spacing: 0.02em;
+}
+
+/* 3D tilt cards */
+.tilt-card {
+    transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.25s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] { opacity: 1; transform: none; transition: none; }
+    .split-reveal .sr-word { transform: none; animation: none; }
+}
